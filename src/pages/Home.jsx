@@ -1,5 +1,6 @@
 import React from "react"
 import { Link } from "react-router-dom"
+import homeCtaImg from "../assets/images/home-cta.png"
 
 export default function Home() {
     return (
@@ -79,7 +80,7 @@ export default function Home() {
 
             <section className="home-cta">
                 <div className="home-cta-image">
-                    <img src="/assets/images/home-cta.png" alt="Vans parked in desert landscape" />
+                    <img src={homeCtaImg} alt="Vans parked in desert landscape" />
                 </div>
                 <div className="home-cta-content">
                     <h2>Ready for Your Next Adventure?</h2>
