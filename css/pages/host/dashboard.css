@@ -1,0 +1,603 @@
+/* Dashboard Page - Mobile First */
+.dashboard-container {
+    background-color: #FFF7ED;
+    padding: 48px 23px;
+}
+
+.dashboard-header {
+    margin-bottom: 48px;
+}
+
+.dashboard-header h1 {
+    font-family: 'Arimo', sans-serif;
+    font-size: 2rem;
+    font-weight: 700;
+    line-height: 1.25;
+    color: #161616;
+    margin: 0 0 16px 0;
+}
+
+.dashboard-header p {
+    font-family: 'Arimo', sans-serif;
+    font-size: 1rem;
+    line-height: 1.56;
+    color: #4D4D4D;
+    margin: 0;
+}
+
+/* Stats Cards */
+.dashboard-stats-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 24px;
+    margin-bottom: 48px;
+}
+
+.stat-card {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0px 1px 3px 0px rgba(0,0,0,0.1), 0px 1px 2px -1px rgba(0,0,0,0.1);
+    padding: 32px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.stat-card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 48px;
+}
+
+.stat-icon {
+    width: 48px;
+    height: 48px;
+    background-color: #FFEAD0;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.stat-badge {
+    font-family: 'Arimo', sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 1.43;
+}
+
+.stat-badge.positive {
+    color: #00A63E;
+}
+
+.stat-label {
+    font-family: 'Arimo', sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.43;
+    color: #4D4D4D;
+    margin: 0;
+}
+
+.stat-value {
+    font-family: 'Arimo', sans-serif;
+    font-size: 2.25rem;
+    font-weight: 700;
+    line-height: 1.11;
+    color: #161616;
+    margin: 0;
+}
+
+/* Main Grid */
+.dashboard-main-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 32px;
+}
+
+/* Income Card */
+.dashboard-income-card {
+    background: linear-gradient(to bottom, #FFEAD0, #FFDDB2);
+    border-radius: 10px;
+    box-shadow: 0px 1px 3px 0px rgba(0,0,0,0.1), 0px 1px 2px -1px rgba(0,0,0,0.1);
+    padding: 32px;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.income-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.income-info {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.income-label {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.income-label p {
+    font-family: 'Arimo', sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #4D4D4D;
+    margin: 0;
+}
+
+.income-label .underlined {
+    font-weight: 700;
+    text-decoration: underline;
+}
+
+.income-amount {
+    font-family: 'Arimo', sans-serif;
+    font-size: 3.75rem;
+    font-weight: 700;
+    line-height: 1.25;
+    color: #161616;
+    margin: 0;
+}
+
+.income-change {
+    font-family: 'Arimo', sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.43;
+    color: #00A63E;
+    margin: 0;
+}
+
+.details-link {
+    font-family: 'Arimo', sans-serif;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 1.5;
+    color: #161616;
+    text-decoration: underline;
+}
+
+.details-link:hover {
+    opacity: 0.8;
+}
+
+.income-chart {
+    background-color: rgba(255, 255, 255, 0.5);
+    border-radius: 10px;
+    padding: 16px;
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 8px;
+    height: 96px;
+}
+
+.chart-bar {
+    flex: 1;
+    background-color: #FF8C38;
+    border-radius: 4px 4px 0 0;
+    min-height: 40px;
+}
+
+/* Vans Section */
+.dashboard-vans-section {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0px 1px 3px 0px rgba(0,0,0,0.1), 0px 1px 2px -1px rgba(0,0,0,0.1);
+    padding: 32px;
+}
+
+.section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 24px;
+}
+
+.section-header h2 {
+    font-family: 'Arimo', sans-serif;
+    font-size: 1.875rem;
+    font-weight: 700;
+    line-height: 1.2;
+    color: #161616;
+    margin: 0;
+}
+
+.view-all-link {
+    font-family: 'Arimo', sans-serif;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 1.5;
+    color: #FF8C38;
+    text-decoration: underline;
+}
+
+.view-all-link:hover {
+    opacity: 0.8;
+}
+
+.dashboard-vans-list {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.dashboard-van-item {
+    background-color: #FFF7ED;
+    border-radius: 10px;
+    padding: 24px;
+    display: flex;
+    align-items: center;
+    gap: 24px;
+}
+
+.dashboard-van-item img {
+    width: 96px;
+    height: 96px;
+    border-radius: 10px;
+    box-shadow: 0px 1px 3px 0px rgba(0,0,0,0.1), 0px 1px 2px -1px rgba(0,0,0,0.1);
+    object-fit: cover;
+}
+
+.dashboard-van-info {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.dashboard-van-info h3 {
+    font-family: 'Arimo', sans-serif;
+    font-size: 1.5rem;
+    font-weight: 700;
+    line-height: 1.33;
+    color: #161616;
+    margin: 0;
+}
+
+.dashboard-van-info > p {
+    font-family: 'Arimo', sans-serif;
+    font-size: 1.125rem;
+    font-weight: 400;
+    line-height: 1.56;
+    color: #4D4D4D;
+    margin: 0;
+}
+
+.dashboard-van-stats {
+    display: flex;
+    gap: 16px;
+    margin-top: 4px;
+}
+
+.dashboard-van-stats span {
+    font-family: 'Arimo', sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.43;
+    color: #4D4D4D;
+}
+
+.dashboard-van-stats strong {
+    font-weight: 700;
+    color: #161616;
+}
+
+.dashboard-van-edit {
+    font-family: 'Arimo', sans-serif;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 1.5;
+    color: #161616;
+    text-decoration: underline;
+    white-space: nowrap;
+}
+
+.dashboard-van-edit:hover {
+    opacity: 0.8;
+}
+
+/* Review Card */
+.dashboard-review-card {
+    background: linear-gradient(to bottom, #FFDDB2, #FFCC8D);
+    border-radius: 10px;
+    box-shadow: 0px 1px 3px 0px rgba(0,0,0,0.1), 0px 1px 2px -1px rgba(0,0,0,0.1);
+    padding: 32px;
+}
+
+.review-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px;
+}
+
+.review-header h3 {
+    font-family: 'Arimo', sans-serif;
+    font-size: 1.5rem;
+    font-weight: 700;
+    line-height: 1.33;
+    color: #161616;
+    margin: 0;
+}
+
+.details-link-small {
+    font-family: 'Arimo', sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 1.43;
+    color: #161616;
+    text-decoration: underline;
+}
+
+.details-link-small:hover {
+    opacity: 0.8;
+}
+
+.review-score {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    margin-bottom: 16px;
+}
+
+.review-score-text {
+    display: flex;
+    align-items: baseline;
+}
+
+.score-number {
+    font-family: 'Arimo', sans-serif;
+    font-size: 3rem;
+    font-weight: 700;
+    line-height: 1;
+    color: #161616;
+}
+
+.score-suffix {
+    font-family: 'Arimo', sans-serif;
+    font-size: 1.25rem;
+    font-weight: 400;
+    line-height: 1.4;
+    color: #4D4D4D;
+}
+
+.review-breakdown {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.review-row {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.review-stars {
+    font-family: 'Arimo', sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.43;
+    color: #161616;
+    width: 32px;
+}
+
+.review-bar {
+    flex: 1;
+    height: 8px;
+    background-color: rgba(255, 255, 255, 0.5);
+    border-radius: 999px;
+    overflow: hidden;
+}
+
+.review-bar-fill {
+    height: 100%;
+    background-color: #FF8C38;
+    border-radius: 999px;
+}
+
+.review-percent {
+    font-family: 'Arimo', sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.43;
+    color: #4D4D4D;
+    width: 32px;
+    text-align: right;
+}
+
+/* Quick Actions */
+.dashboard-quick-actions {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0px 1px 3px 0px rgba(0,0,0,0.1), 0px 1px 2px -1px rgba(0,0,0,0.1);
+    padding: 32px;
+}
+
+.dashboard-quick-actions h3 {
+    font-family: 'Arimo', sans-serif;
+    font-size: 1.25rem;
+    font-weight: 700;
+    line-height: 1.4;
+    color: #161616;
+    margin: 0 0 16px 0;
+}
+
+.actions-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.action-btn {
+    font-family: 'Arimo', sans-serif;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 1.5;
+    padding: 12px 24px;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+    transition: opacity 0.2s;
+}
+
+.action-btn:hover {
+    opacity: 0.9;
+}
+
+.action-btn.primary {
+    background-color: #FF8C38;
+    color: white;
+}
+
+.action-btn.secondary {
+    background-color: #FFEAD0;
+    color: #161616;
+}
+
+/* Recent Activity */
+.dashboard-recent-activity {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0px 1px 3px 0px rgba(0,0,0,0.1), 0px 1px 2px -1px rgba(0,0,0,0.1);
+    padding: 24px;
+}
+
+.dashboard-recent-activity h3 {
+    font-family: 'Arimo', sans-serif;
+    font-size: 1.25rem;
+    font-weight: 700;
+    line-height: 1.4;
+    color: #161616;
+    margin: 0 0 16px 0;
+}
+
+.activity-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.activity-item {
+    display: flex;
+    gap: 12px;
+    align-items: flex-start;
+}
+
+.activity-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: #D1D5DC;
+    flex-shrink: 0;
+    margin-top: 6px;
+}
+
+.activity-dot.active {
+    background-color: #FF8C38;
+}
+
+.activity-content {
+    flex: 1;
+}
+
+.activity-text {
+    font-family: 'Arimo', sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.43;
+    color: #161616;
+    margin: 0 0 4px 0;
+}
+
+.activity-time {
+    font-family: 'Arimo', sans-serif;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 1.33;
+    color: #4D4D4D;
+    margin: 0;
+}
+
+.loading {
+    text-align: center;
+    padding: 20px;
+    color: #4D4D4D;
+}
+
+/* Tablet Responsive Styles */
+@media (min-width: 768px) {
+    .dashboard-container {
+        padding: 64px 60px;
+    }
+
+    .dashboard-header h1 {
+        font-size: 2.5rem;
+    }
+
+    .dashboard-header p {
+        font-size: 1.125rem;
+    }
+
+    .dashboard-stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 32px;
+    }
+
+    .dashboard-main-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .income-amount {
+        font-size: 4rem;
+    }
+
+    .section-header h2 {
+        font-size: 2rem;
+    }
+}
+
+/* Desktop Responsive Styles */
+@media (min-width: 1024px) {
+    .dashboard-container {
+        padding: 48px 128px;
+    }
+
+    .dashboard-header h1 {
+        font-size: 3rem;
+    }
+
+    .dashboard-stats-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .dashboard-main-grid {
+        grid-template-columns: 2fr 1fr;
+        gap: 32px;
+    }
+
+    .dashboard-left-column {
+        display: flex;
+        flex-direction: column;
+        gap: 32px;
+    }
+
+    .dashboard-right-column {
+        display: flex;
+        flex-direction: column;
+        gap: 32px;
+    }
+}
+

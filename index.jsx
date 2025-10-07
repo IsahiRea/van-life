@@ -27,6 +27,7 @@ import Error from "./components/Error"
 import { requireAuth } from "./utils"
 
 import "./server"
+import "./css/main.css"
 
 const router = createBrowserRouter(createRoutesFromElements(
   <Route path="/" element={<Layout />}>

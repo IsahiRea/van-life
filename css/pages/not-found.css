@@ -1,0 +1,12 @@
+/* Not Found Styles */
+.not-found-container {
+    padding: 3em 2em;
+    max-width: max-content;
+    margin: 0 auto;
+}
+
+.not-found-container .link-button {
+    width: 100%;
+    background-color: #161616;
+    color: white;
+}

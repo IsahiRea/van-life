@@ -1,0 +1,44 @@
+/* Header & Navigation - Mobile First */
+
+header {
+    width: 80%;
+    height: 110px;
+    display: flex;
+    align-items: center;
+    padding-block: 10px;
+    margin: 0 auto;
+}
+
+header .site-logo {
+    color: black;
+    margin-right: auto;
+    text-transform: uppercase;
+    font-weight: 900;
+    font-size: 25px;
+}
+
+header a {
+    text-decoration: none;
+    color: #4D4D4D;
+    font-weight: 600;
+    padding: 5px 15px;
+}
+
+header a:hover {
+    color: #161616;
+    text-decoration: underline;
+}
+
+header button {
+    cursor: pointer;
+}
+
+header .login-icon {
+    height: 18px;
+    width: 18px;
+}
+
+header .login-link {
+    display: inline-flex;
+    align-items: center;
+}

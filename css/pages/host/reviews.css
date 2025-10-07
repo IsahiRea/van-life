@@ -1,0 +1,409 @@
+/* Reviews Page - Mobile First */
+.reviews-container {
+    background-color: #FFF7ED;
+    padding: 48px 23px;
+}
+
+.reviews-header {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-bottom: 48px;
+}
+
+.reviews-header h1 {
+    font-family: 'Arimo', sans-serif;
+    font-size: 2.375rem;
+    font-weight: 700;
+    line-height: 1.25;
+    color: #161616;
+    margin: 0;
+}
+
+.reviews-last-period {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-family: 'Arimo', sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #4D4D4D;
+    margin: 0;
+}
+
+.reviews-last-period svg {
+    width: 16px;
+    height: 16px;
+    flex-shrink: 0;
+}
+
+.reviews-last-period .period-text {
+    font-weight: 700;
+    color: #FF8C38;
+    text-decoration: underline;
+}
+
+/* Overall Rating Card */
+.overall-rating-card {
+    background-color: white;
+    border-radius: 14px;
+    box-shadow: 0px 10px 15px -3px rgba(0,0,0,0.1), 0px 4px 6px -4px rgba(0,0,0,0.1);
+    padding: 40px 23px;
+    margin-bottom: 48px;
+}
+
+.rating-summary {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    margin-bottom: 32px;
+}
+
+.rating-badge {
+    position: relative;
+    width: 180px;
+    height: 156px;
+    margin: 0 auto;
+}
+
+.rating-badge::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to bottom, #FF8C38, #FF7A1F);
+    border-radius: 16px;
+    filter: blur(40px);
+    opacity: 0.1;
+}
+
+.rating-badge-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, #FF8C38, #FF7A1F);
+    border-radius: 16px;
+    box-shadow: 0px 20px 25px -5px rgba(0,0,0,0.1), 0px 8px 10px -6px rgba(0,0,0,0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 32px;
+}
+
+.rating-score {
+    font-family: 'Arimo', sans-serif;
+    font-size: 4rem;
+    font-weight: 700;
+    line-height: 1;
+    color: white;
+    text-align: center;
+}
+
+.rating-stars {
+    display: flex;
+    gap: 4px;
+    align-items: center;
+    justify-content: center;
+}
+
+.rating-info {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.rating-title {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+}
+
+.rating-title svg {
+    width: 24px;
+    height: 24px;
+    flex-shrink: 0;
+}
+
+.rating-title h2 {
+    font-family: 'Arimo', sans-serif;
+    font-size: 1.5rem;
+    font-weight: 700;
+    line-height: 1.5;
+    color: #161616;
+    margin: 0;
+}
+
+.rating-subtitle {
+    font-family: 'Arimo', sans-serif;
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #4D4D4D;
+    margin: 0;
+}
+
+.rating-breakdown {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.rating-bar-row {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.rating-bar-label {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    width: 64px;
+    flex-shrink: 0;
+}
+
+.rating-bar-label span {
+    font-family: 'Arimo', sans-serif;
+    font-size: 15px;
+    font-weight: 700;
+    line-height: 1.5;
+    color: #161616;
+}
+
+.rating-bar-label svg {
+    width: 14px;
+    height: 14px;
+    flex-shrink: 0;
+}
+
+.rating-bar-bg {
+    flex: 1;
+    height: 10px;
+    background-color: #FFEDD4;
+    border-radius: 999px;
+    overflow: hidden;
+}
+
+.rating-bar-fill {
+    height: 100%;
+    background: linear-gradient(to bottom, #FF8C38, #FF7A1F);
+    border-radius: 999px;
+    transition: width 0.3s ease;
+}
+
+.rating-bar-percent {
+    font-family: 'Arimo', sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 1.5;
+    color: #4D4D4D;
+    text-align: right;
+    width: 48px;
+    flex-shrink: 0;
+}
+
+/* Recent Reviews Section */
+.recent-reviews-section {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.recent-reviews-title {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-family: 'Arimo', sans-serif;
+    font-size: 1.375rem;
+    font-weight: 700;
+    line-height: 1.5;
+    color: #161616;
+    margin: 0;
+}
+
+.recent-reviews-title svg {
+    width: 20px;
+    height: 20px;
+    flex-shrink: 0;
+}
+
+.reviews-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.review-card {
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 14px;
+    box-shadow: 0px 4px 6px -1px rgba(0,0,0,0.1), 0px 2px 4px -2px rgba(0,0,0,0.1);
+    padding: 32px 23px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.review-stars {
+    display: flex;
+    gap: 4px;
+}
+
+.review-stars svg {
+    width: 20px;
+    height: 20px;
+    flex-shrink: 0;
+}
+
+.review-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 16px;
+    border-bottom: 1px solid #FFEDD4;
+    gap: 16px;
+}
+
+.reviewer-info {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.reviewer-avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: linear-gradient(to bottom, #FF8C38, #FF7A1F);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Arimo', sans-serif;
+    font-size: 16px;
+    font-weight: 700;
+    color: white;
+    flex-shrink: 0;
+}
+
+.reviewer-details {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.reviewer-name {
+    font-family: 'Arimo', sans-serif;
+    font-size: 17px;
+    font-weight: 700;
+    line-height: 1.5;
+    color: #161616;
+    margin: 0;
+}
+
+.review-date {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-family: 'Arimo', sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #8C8C8C;
+    margin: 0;
+}
+
+.review-date svg {
+    width: 14px;
+    height: 14px;
+    flex-shrink: 0;
+}
+
+.review-van-badge {
+    background-color: #FFEAD0;
+    border-radius: 8px;
+    padding: 4px 12px;
+    font-family: 'Arimo', sans-serif;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 1.33;
+    color: #161616;
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+
+.review-text {
+    font-family: 'Arimo', sans-serif;
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 1.625;
+    color: #ABABAB;
+    margin: 0;
+}
+
+/* Tablet Responsive Styles */
+@media (min-width: 768px) {
+    .reviews-container {
+        padding: 64px 60px;
+    }
+
+    .reviews-header h1 {
+        font-size: 2.75rem;
+    }
+
+    .overall-rating-card {
+        padding: 40px 48px;
+    }
+
+    .rating-summary {
+        flex-direction: row;
+        align-items: center;
+        gap: 48px;
+    }
+
+    .rating-info {
+        text-align: left;
+        align-items: flex-start;
+    }
+
+    .rating-title {
+        justify-content: flex-start;
+    }
+
+    .review-card {
+        padding: 32px;
+    }
+}
+
+/* Desktop Responsive Styles */
+@media (min-width: 1024px) {
+
+    .rating-badge {
+        margin: 0;
+    }
+
+    .reviews-container {
+        padding: 48px 66px;
+    }
+
+    .reviews-header h1 {
+        font-size: 2.375rem;
+    }
+
+    .overall-rating-card {
+        display: flex;
+        padding: 40px;
+        gap: 2em;
+    }
+
+    .rating-summary {
+        gap: 24px;
+    }
+
+    .rating-breakdown {
+        margin-left: auto;
+        width: 40%;
+    }
+}
