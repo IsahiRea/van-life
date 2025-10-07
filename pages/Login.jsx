@@ -4,7 +4,8 @@ import {
     useNavigation,
     Form,
     redirect,
-    useActionData
+    useActionData,
+    Link
 } from "react-router-dom"
 import { loginUser } from "../api"
 
@@ -63,6 +64,8 @@ export default function Login() {
                     }
                 </button>
             </Form>
+
+            <p>Don't have an account? <Link to="/signup" className="sign-up-link">Sign up</Link></p>
         </div>
     )
 }
