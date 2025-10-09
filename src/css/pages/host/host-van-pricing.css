@@ -1,0 +1,207 @@
+/* Host Van Pricing Tab - Mobile First */
+
+.host-van-pricing {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+}
+
+.pricing-section {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.pricing-heading {
+    font-family: 'Arimo', sans-serif;
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 1.5;
+    color: #161616;
+    margin: 0;
+}
+
+/* Base Rate */
+.pricing-base-rate {
+    display: flex;
+    align-items: baseline;
+    gap: 8px;
+}
+
+.price-large {
+    font-family: 'Arimo', sans-serif;
+    font-size: 28px;
+    font-weight: 700;
+    line-height: 1.5;
+    color: #161616;
+}
+
+.price-period {
+    font-family: 'Arimo', sans-serif;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #4D4D4D;
+}
+
+/* Pricing Tiers */
+.pricing-tiers-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 16px;
+    margin-top: 8px;
+}
+
+.pricing-tier-card {
+    background-color: white;
+    border: 1px solid #FFD6A7;
+    border-radius: 14px;
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    box-shadow: 0px 1px 3px 0px rgba(0,0,0,0.1),
+                0px 1px 2px -1px rgba(0,0,0,0.1);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.pricing-tier-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0px 4px 6px -1px rgba(0,0,0,0.1),
+                0px 2px 4px -2px rgba(0,0,0,0.1);
+}
+
+.pricing-tier-card.featured {
+    background: linear-gradient(to bottom, #FF8C38, #FF7A1F);
+    border-color: #FFD6A7;
+    box-shadow: 0px 4px 6px -1px rgba(0,0,0,0.1),
+                0px 2px 4px -2px rgba(0,0,0,0.1);
+}
+
+.tier-header {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.tier-icon {
+    width: 40px;
+    height: 40px;
+    background-color: #FFEDD4;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.pricing-tier-card.featured .tier-icon {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+.tier-title {
+    font-family: 'Arimo', sans-serif;
+    font-size: 17px;
+    font-weight: 700;
+    line-height: 1.5;
+    color: #161616;
+    margin: 0;
+}
+
+.pricing-tier-card.featured .tier-title {
+    color: white;
+}
+
+.tier-price {
+    font-family: 'Arimo', sans-serif;
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 1.5;
+    color: #161616;
+    margin: 0;
+}
+
+.pricing-tier-card.featured .tier-price {
+    color: white;
+}
+
+.tier-details {
+    font-family: 'Arimo', sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #4D4D4D;
+    margin: 0;
+}
+
+.pricing-tier-card.featured .tier-details {
+    color: white;
+    opacity: 0.9;
+}
+
+/* Discounts */
+.pricing-discounts {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-top: 8px;
+}
+
+.discount-item {
+    background-color: rgba(255, 247, 237, 0.5);
+    border-radius: 10px;
+    padding: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+}
+
+.discount-info {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.discount-title {
+    font-family: 'Arimo', sans-serif;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 1.5;
+    color: #161616;
+    margin: 0;
+}
+
+.discount-description {
+    font-family: 'Arimo', sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #4D4D4D;
+    margin: 0;
+}
+
+.discount-badge {
+    background-color: rgba(0, 201, 80, 0.1);
+    color: #008236;
+    font-family: 'Arimo', sans-serif;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 1.33;
+    padding: 8px 16px;
+    border-radius: 8px;
+    white-space: nowrap;
+}
+
+/* Tablet Responsive Styles */
+@media (min-width: 768px) {
+    .pricing-tiers-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Desktop Responsive Styles */
+@media (min-width: 1024px) {
+    .pricing-tiers-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}

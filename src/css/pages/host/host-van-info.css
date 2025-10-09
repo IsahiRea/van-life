@@ -1,0 +1,80 @@
+/* Host Van Info Tab - Mobile First */
+
+.host-van-info {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.info-section {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.info-heading {
+    font-family: 'Arimo', sans-serif;
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 1.5;
+    color: #161616;
+    margin: 0;
+}
+
+.info-text {
+    font-family: 'Arimo', sans-serif;
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 1.625;
+    color: #161616;
+    margin: 0;
+}
+
+/* Specifications Grid */
+.specifications-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 16px;
+    margin-top: 12px;
+}
+
+.spec-item {
+    background-color: rgba(255, 247, 237, 0.5);
+    border-radius: 10px;
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.spec-label {
+    font-family: 'Arimo', sans-serif;
+    font-size: 13px;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #4D4D4D;
+    text-transform: capitalize;
+}
+
+.spec-value {
+    font-family: 'Arimo', sans-serif;
+    font-size: 15px;
+    font-weight: 700;
+    line-height: 1.5;
+    color: #161616;
+    margin: 0;
+}
+
+/* Tablet Responsive Styles */
+@media (min-width: 768px) {
+    .specifications-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Desktop Responsive Styles */
+@media (min-width: 1024px) {
+    .specifications-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
