@@ -9,16 +9,19 @@ Visit the website [website](https://quiet-rabanadas-3dba69.netlify.app/)
 
 - **Van Listings**: Browse a curated collection of available rental vans
 - **Detailed Views**: View comprehensive information about each van including photos, pricing, and amenities
-<!-- - **User Authentication**: Secure login system for accessing personal features -->
-<!-- - **Responsive Design**: Optimized for desktop and mobile devices -->
-- **React Router Navigation**: Seamless single-page application routing
+- **User Authentication**: Secure login system for accessing host features
+- **Host Dashboard**: Manage your van listings with income tracking and reviews
+- **Responsive Design**: Mobile-first design optimized for all devices
+- **React Router Navigation**: Seamless single-page application routing with nested routes
 
 ## Tech Stack
 
-- **Frontend**: React.js
-- **Routing**: React Router
-- **Styling**: CSS
-- **Build Tool**: Vite
+- **Frontend**: React.js 18.2.0
+- **Routing**: React Router v6.4.3
+- **Styling**: CSS (Mobile-first modular architecture)
+- **Icons**: React Icons 5.5.0
+- **Backend**: Firebase 12.1.0 (Firestore) + MirageJS 0.1.46 (mock auth server)
+- **Build Tool**: Vite (latest)
 - **Package Manager**: npm
 
 ## Getting Started
@@ -58,9 +61,23 @@ For testing purposes, use these credentials:
 
 ```
 vanlife/
-├── components/     # Reusable UI components
-├── pages/          # Route components
-└── index.jsx         # Main application component
+├── src/
+│   ├── components/        # Reusable UI components (Header, Footer, Layout, etc.)
+│   ├── pages/            # Route components (Home, About, Vans, Host pages)
+│   │   ├── Host/         # Host dashboard and van management pages
+│   │   └── Vans/         # Public van listing and detail pages
+│   ├── css/              # Modular CSS architecture
+│   │   ├── base/         # Reset and utility styles
+│   │   ├── components/   # Component-specific styles
+│   │   ├── pages/        # Page-specific styles
+│   │   │   └── host/     # Host page styles
+│   │   └── main.css      # CSS entry point
+│   ├── assets/           # Static assets and images
+│   ├── api.js            # Firebase API functions
+│   ├── server.js         # MirageJS mock authentication server
+│   ├── utils.js          # Utility functions (requireAuth, etc.)
+│   └── index.jsx         # Main application entry & route definitions
+└── index.html            # Root HTML file
 ```
 
 ## Available Scripts
@@ -69,12 +86,33 @@ vanlife/
 - `npm run build` - Build for production
 - `npm run preview` - Preview production build locally
 
-## Learning Objectives
+## Key Features Implementation
 
 This project demonstrates:
-- React Router implementation for SPA navigation
-- Dynamic routing with URL parameters
-- Protected routes and authentication
-- Nested routing structures
+- **React Router v6** with loader-based data fetching
+- **Dynamic routing** with URL parameters and nested routes
+- **Protected routes** with authentication guards
+- **Firebase Firestore** integration for data persistence
+- **Nested routing structures** for complex layouts (Host dashboard)
+- **Mobile-first responsive design** with CSS media queries
+- **Modular CSS architecture** for better maintainability and scalability
+- **State preservation** across navigation using location.state
+- **Icon integration** using react-icons library
+
+## Routes
+
+### Public Routes
+- `/` - Home page
+- `/about` - About page
+- `/vans` - Browse all available vans
+- `/vans/:id` - Individual van details
+- `/login` - User authentication
+
+### Protected Routes (Host Dashboard)
+- `/host` - Host dashboard overview
+- `/host/income` - Income tracking
+- `/host/reviews` - Customer reviews
+- `/host/vans` - Manage van listings
+- `/host/vans/:id` - Van management (Info, Pricing, Photos)
 
 Built with ❤️ as a React Router learning exercise

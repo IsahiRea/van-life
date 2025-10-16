@@ -1,0 +1,273 @@
+/* Host Vans Page - Mobile First */
+.host-vans-container {
+    background-color: #FFF7ED;
+    padding: 48px 23px;
+}
+
+.host-vans-header {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    margin-bottom: 40px;
+}
+
+.host-vans-header-text h1 {
+    font-family: 'Arimo', sans-serif;
+    font-size: 2rem;
+    font-weight: 700;
+    line-height: 1.25;
+    color: #161616;
+    margin: 0 0 8px 0;
+}
+
+.host-vans-header-text p {
+    font-family: 'Arimo', sans-serif;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #4D4D4D;
+    margin: 0;
+}
+
+.host-vans-add-btn {
+    background-color: #FF8C38;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    padding: 12px 24px;
+    font-family: 'Arimo', sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.5;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+    box-shadow: 0px 4px 6px -1px rgba(0,0,0,0.1), 0px 2px 4px -2px rgba(0,0,0,0.1);
+    transition: opacity 0.2s;
+    width: 100%;
+    justify-content: center;
+}
+
+.host-vans-add-btn:hover {
+    opacity: 0.9;
+}
+
+.host-vans-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 24px;
+}
+
+.host-vans-card {
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 14px;
+    overflow: hidden;
+    box-shadow: 0px 4px 6px -1px rgba(0,0,0,0.1), 0px 2px 4px -2px rgba(0,0,0,0.1);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.host-vans-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0px 6px 8px -1px rgba(0,0,0,0.15), 0px 3px 5px -2px rgba(0,0,0,0.1);
+}
+
+.host-vans-card-image {
+    position: relative;
+    width: 100%;
+    height: 224px;
+    overflow: hidden;
+}
+
+.host-vans-card-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.host-vans-badge {
+    position: absolute;
+    top: 13px;
+    right: 13px;
+    background-color: rgba(0, 201, 80, 0.9);
+    color: white;
+    font-family: 'Arimo', sans-serif;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 1.33;
+    padding: 4px 12px;
+    border-radius: 8px;
+    box-shadow: 0px 10px 15px -3px rgba(0,0,0,0.1), 0px 4px 6px -4px rgba(0,0,0,0.1);
+}
+
+.host-vans-card-content {
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.host-vans-card-info {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.host-vans-card-info h3 {
+    font-family: 'Arimo', sans-serif;
+    font-size: 1.375rem;
+    font-weight: 700;
+    line-height: 1.5;
+    color: #161616;
+    margin: 0;
+}
+
+.host-vans-card-price {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.host-vans-card-price .price {
+    font-family: 'Arimo', sans-serif;
+    font-size: 1.25rem;
+    font-weight: 700;
+    line-height: 1.5;
+    color: #FF8C38;
+}
+
+.host-vans-card-price .period {
+    font-family: 'Arimo', sans-serif;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #4D4D4D;
+}
+
+.host-vans-card-stats {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding-bottom: 1px;
+    border-bottom: 1px solid #FFEDD4;
+}
+
+.host-vans-card-stats .stat-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.host-vans-card-stats .stat-value {
+    font-family: 'Arimo', sans-serif;
+    font-size: 15px;
+    font-weight: 700;
+    line-height: 1.5;
+    color: #161616;
+}
+
+.host-vans-card-stats .stat-label {
+    font-family: 'Arimo', sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #4D4D4D;
+}
+
+.host-vans-card-stats .stat-divider {
+    width: 1px;
+    height: 16px;
+    background-color: #FFD6A8;
+}
+
+.host-vans-card-actions {
+    display: flex;
+    gap: 12px;
+}
+
+.host-vans-edit-btn {
+    flex: 1;
+    background-color: #FFEAD0;
+    color: #161616;
+    border: none;
+    border-radius: 10px;
+    padding: 10px 24px;
+    font-family: 'Arimo', sans-serif;
+    font-size: 15px;
+    font-weight: 700;
+    line-height: 1.5;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    text-decoration: none;
+    cursor: pointer;
+    transition: opacity 0.2s;
+}
+
+.host-vans-edit-btn:hover {
+    opacity: 0.8;
+}
+
+.host-vans-more-btn {
+    background-color: rgba(255, 237, 212, 0.5);
+    border: none;
+    border-radius: 10px;
+    width: 48px;
+    height: 42.5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: opacity 0.2s;
+}
+
+.host-vans-more-btn:hover {
+    opacity: 0.8;
+}
+
+/* Tablet Responsive Styles */
+@media (min-width: 768px) {
+    .host-vans-container {
+        padding: 64px 60px;
+    }
+
+    .host-vans-header {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: flex-start;
+    }
+
+    .host-vans-header-text h1 {
+        font-size: 2.375rem;
+    }
+
+    .host-vans-add-btn {
+        width: auto;
+    }
+
+    .host-vans-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 24px;
+    }
+}
+
+/* Desktop Responsive Styles */
+@media (min-width: 1024px) {
+    .host-vans-container {
+        padding: 48px 66px;
+    }
+
+    .host-vans-header-text h1 {
+        font-size: 2.375rem;
+    }
+
+    .host-vans-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 24px;
+    }
+
+    .host-nav-bar {
+        padding: 0 66px 1px 66px;
+    }
+}
