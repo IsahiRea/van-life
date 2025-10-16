@@ -16,11 +16,12 @@ Visit the website [website](https://quiet-rabanadas-3dba69.netlify.app/)
 
 ## Tech Stack
 
-- **Frontend**: React.js
-- **Routing**: React Router v6
-- **Styling**: CSS (Mobile-first approach)
-- **Backend**: Firebase Firestore + MirageJS (mock auth server)
-- **Build Tool**: Vite
+- **Frontend**: React.js 18.2.0
+- **Routing**: React Router v6.4.3
+- **Styling**: CSS (Mobile-first modular architecture)
+- **Icons**: React Icons 5.5.0
+- **Backend**: Firebase 12.1.0 (Firestore) + MirageJS 0.1.46 (mock auth server)
+- **Build Tool**: Vite (latest)
 - **Package Manager**: npm
 
 ## Getting Started
@@ -63,7 +64,14 @@ vanlife/
 ├── src/
 │   ├── components/        # Reusable UI components (Header, Footer, Layout, etc.)
 │   ├── pages/            # Route components (Home, About, Vans, Host pages)
-│   │   └── Host/         # Host dashboard and van management pages
+│   │   ├── Host/         # Host dashboard and van management pages
+│   │   └── Vans/         # Public van listing and detail pages
+│   ├── css/              # Modular CSS architecture
+│   │   ├── base/         # Reset and utility styles
+│   │   ├── components/   # Component-specific styles
+│   │   ├── pages/        # Page-specific styles
+│   │   │   └── host/     # Host page styles
+│   │   └── main.css      # CSS entry point
 │   ├── assets/           # Static assets and images
 │   ├── api.js            # Firebase API functions
 │   ├── server.js         # MirageJS mock authentication server
@@ -87,7 +95,9 @@ This project demonstrates:
 - **Firebase Firestore** integration for data persistence
 - **Nested routing structures** for complex layouts (Host dashboard)
 - **Mobile-first responsive design** with CSS media queries
+- **Modular CSS architecture** for better maintainability and scalability
 - **State preservation** across navigation using location.state
+- **Icon integration** using react-icons library
 
 ## Routes
 
