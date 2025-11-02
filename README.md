@@ -5,6 +5,32 @@ A React-based van rental marketplace application built to practice React Router 
 ## Link To Website
 Visit the website [website](https://quiet-rabanadas-3dba69.netlify.app/)
 
+## Screenshots
+
+### Home Page
+![Home Page](screenshots/home.png)
+
+### About Page
+![About Page](screenshots/about.png)
+
+### Van Listings
+![Van Listings](screenshots/vans.png)
+
+### Login Page
+![Login Page](screenshots/login.png)
+
+### Host Dashboard
+![Host Dashboard](screenshots/host-dashboard.png)
+
+### Host Income
+![Host Income](screenshots/host-income.png)
+
+### Host Vans Management
+![Host Vans](screenshots/host-vans.png)
+
+### Host Reviews
+![Host Reviews](screenshots/host-reviews.png)
+
 ## Features
 
 - **Van Listings**: Browse a curated collection of available rental vans
