@@ -1,6 +1,6 @@
 /* Income Page - Mobile First */
 .income-container {
-    background-color: #FFF7ED;
+    background-color: var(--bg-primary);
     padding: 48px 23px;
 }
 
@@ -12,11 +12,11 @@
 }
 
 .income-header h1 {
-    font-family: 'Arimo', sans-serif;
+    font-family: var(--font-secondary);
     font-size: 2.625rem;
     font-weight: 700;
     line-height: 1.25;
-    color: #161616;
+    color: var(--color-black);
     margin: 0;
 }
 
@@ -24,11 +24,11 @@
     display: flex;
     align-items: center;
     gap: 8px;
-    font-family: 'Arimo', sans-serif;
+    font-family: var(--font-secondary);
     font-size: 16px;
     font-weight: 400;
     line-height: 1.5;
-    color: #4D4D4D;
+    color: var(--color-gray);
     margin: 0;
 }
 
@@ -40,15 +40,15 @@
 
 .income-last-period .period-text {
     font-weight: 700;
-    color: #FF8C38;
+    color: var(--color-primary);
     text-decoration: underline;
 }
 
 /* Total Earnings Card */
 .total-earnings-card {
-    background: linear-gradient(to bottom, #FF8C38, #FF7A1F);
+    background: var(--gradient-orange-primary);
     border-radius: 14px;
-    box-shadow: 0px 20px 25px -5px rgba(0,0,0,0.1), 0px 8px 10px -6px rgba(0,0,0,0.1);
+    box-shadow: var(--shadow-xl);
     padding: 40px 23px;
     margin-bottom: 40px;
     overflow: hidden;
@@ -73,11 +73,11 @@
     align-items: center;
     justify-content: center;
     gap: 8px;
-    font-family: 'Arimo', sans-serif;
+    font-family: var(--font-secondary);
     font-size: 16px;
     font-weight: 400;
     line-height: 1.5;
-    color: rgba(255, 255, 255, 0.8);
+    color: var(--color-white-alpha);
     margin: 0;
 }
 
@@ -88,11 +88,11 @@
 }
 
 .earnings-amount {
-    font-family: 'Arimo', sans-serif;
+    font-family: var(--font-secondary);
     font-size: 4.25rem;
     font-weight: 700;
     line-height: 1;
-    color: white;
+    color: var(--color-white);
     margin: 0;
 }
 
@@ -102,7 +102,7 @@
     justify-content: center;
     gap: 8px;
     background-color: rgba(255, 255, 255, 0.2);
-    border-radius: 999px;
+    border-radius: var(--radius-pill);
     padding: 8px 16px;
     margin: 0 auto;
 }
@@ -116,11 +116,11 @@
 }
 
 .badge-text {
-    font-family: 'Arimo', sans-serif;
+    font-family: var(--font-secondary);
     font-size: 14px;
     font-weight: 700;
     line-height: 1.5;
-    color: white;
+    color: var(--color-white);
 }
 
 .earnings-icon {
@@ -142,7 +142,7 @@
 .monthly-overview-card {
     background-color: rgba(255, 255, 255, 0.9);
     border-radius: 14px;
-    box-shadow: 0px 10px 15px -3px rgba(0,0,0,0.1), 0px 4px 6px -4px rgba(0,0,0,0.1);
+    box-shadow: var(--shadow-lg);
     padding: 32px 23px;
     margin-bottom: 40px;
 }
@@ -158,11 +158,11 @@
     display: flex;
     align-items: center;
     gap: 12px;
-    font-family: 'Arimo', sans-serif;
+    font-family: var(--font-secondary);
     font-size: 1.375rem;
     font-weight: 700;
     line-height: 1.5;
-    color: #161616;
+    color: var(--color-black);
     margin: 0;
 }
 
@@ -173,15 +173,15 @@
 }
 
 .overview-dropdown {
-    background-color: #FFF7ED;
+    background-color: var(--bg-primary);
     border: 1px solid #FFD6A7;
-    border-radius: 10px;
+    border-radius: var(--radius-lg);
     padding: 8px 16px;
-    font-family: 'Arimo', sans-serif;
+    font-family: var(--font-secondary);
     font-size: 14px;
     font-weight: 400;
     line-height: 1.5;
-    color: #161616;
+    color: var(--color-black);
     display: inline-block;
     width: fit-content;
 }
@@ -201,11 +201,11 @@
 }
 
 .chart-y-axis span {
-    font-family: 'Arimo', sans-serif;
+    font-family: var(--font-secondary);
     font-size: 15px;
     font-weight: 700;
     line-height: 1.5;
-    color: #4D4D4D;
+    color: var(--color-gray);
 }
 
 .chart-area {
@@ -256,23 +256,23 @@
 .chart-bar {
     width: 100%;
     max-width: 100px;
-    background: linear-gradient(to bottom, #FFEAD0, #FFDDB2);
+    background: var(--gradient-orange-light);
     border-radius: 14px 14px 0 0;
-    box-shadow: 0px 10px 15px -3px rgba(0,0,0,0.1), 0px 4px 6px -4px rgba(0,0,0,0.1);
+    box-shadow: var(--shadow-lg);
     min-height: 0;
-    transition: all 0.3s ease;
+    transition: var(--transition-smooth);
 }
 
 .chart-bar.active {
-    background: linear-gradient(to bottom, #FF8C38, #FF7A1F);
+    background: var(--gradient-orange-primary);
 }
 
 .chart-label {
-    font-family: 'Arimo', sans-serif;
+    font-family: var(--font-secondary);
     font-size: 17px;
     font-weight: 700;
     line-height: 1.5;
-    color: #4D4D4D;
+    color: var(--color-gray);
     margin-top: 16px;
     text-align: center;
 }
@@ -294,11 +294,11 @@
     display: flex;
     align-items: center;
     gap: 12px;
-    font-family: 'Arimo', sans-serif;
+    font-family: var(--font-secondary);
     font-size: 1.375rem;
     font-weight: 700;
     line-height: 1.5;
-    color: #161616;
+    color: var(--color-black);
     margin: 0;
 }
 
@@ -312,11 +312,11 @@
     display: flex;
     align-items: center;
     gap: 8px;
-    font-family: 'Arimo', sans-serif;
+    font-family: var(--font-secondary);
     font-size: 15px;
     font-weight: 400;
     line-height: 1.5;
-    color: #4D4D4D;
+    color: var(--color-gray);
     margin: 0;
 }
 
@@ -328,7 +328,7 @@
 
 .transactions-period span {
     font-weight: 700;
-    color: #FF8C38;
+    color: var(--color-primary);
 }
 
 .transactions-list {
@@ -340,7 +340,7 @@
 .transaction-card {
     background-color: rgba(255, 255, 255, 0.9);
     border-radius: 14px;
-    box-shadow: 0px 4px 6px -1px rgba(0,0,0,0.1), 0px 2px 4px -2px rgba(0,0,0,0.1);
+    box-shadow: var(--shadow-md);
     padding: 24px;
     display: flex;
     justify-content: space-between;
@@ -377,20 +377,20 @@
 }
 
 .transaction-amount {
-    font-family: 'Arimo', sans-serif;
+    font-family: var(--font-secondary);
     font-size: 1.75rem;
     font-weight: 700;
     line-height: 1.5;
-    color: #161616;
+    color: var(--color-black);
     margin: 0;
 }
 
 .transaction-van {
-    font-family: 'Arimo', sans-serif;
+    font-family: var(--font-secondary);
     font-size: 14px;
     font-weight: 400;
     line-height: 1.5;
-    color: #4D4D4D;
+    color: var(--color-gray);
     margin: 0;
 }
 
@@ -406,7 +406,7 @@
     color: #008236;
     border-radius: 8px;
     padding: 4px 12px;
-    font-family: 'Arimo', sans-serif;
+    font-family: var(--font-secondary);
     font-size: 12px;
     font-weight: 400;
     line-height: 1.33;
@@ -416,7 +416,7 @@
     display: flex;
     align-items: center;
     gap: 6px;
-    font-family: 'Arimo', sans-serif;
+    font-family: var(--font-secondary);
     font-size: 17px;
     font-weight: 700;
     line-height: 1.5;

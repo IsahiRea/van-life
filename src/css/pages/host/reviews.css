@@ -1,6 +1,6 @@
 /* Reviews Page - Mobile First */
 .reviews-container {
-    background-color: #FFF7ED;
+    background-color: var(--bg-primary);
     padding: 48px 23px;
 }
 
@@ -12,11 +12,11 @@
 }
 
 .reviews-header h1 {
-    font-family: 'Arimo', sans-serif;
+    font-family: var(--font-secondary);
     font-size: 2.375rem;
     font-weight: 700;
     line-height: 1.25;
-    color: #161616;
+    color: var(--color-black);
     margin: 0;
 }
 
@@ -24,11 +24,11 @@
     display: flex;
     align-items: center;
     gap: 8px;
-    font-family: 'Arimo', sans-serif;
+    font-family: var(--font-secondary);
     font-size: 16px;
     font-weight: 400;
     line-height: 1.5;
-    color: #4D4D4D;
+    color: var(--color-gray);
     margin: 0;
 }
 
@@ -40,15 +40,15 @@
 
 .reviews-last-period .period-text {
     font-weight: 700;
-    color: #FF8C38;
+    color: var(--color-primary);
     text-decoration: underline;
 }
 
 /* Overall Rating Card */
 .overall-rating-card {
-    background-color: white;
+    background-color: var(--color-white);
     border-radius: 14px;
-    box-shadow: 0px 10px 15px -3px rgba(0,0,0,0.1), 0px 4px 6px -4px rgba(0,0,0,0.1);
+    box-shadow: var(--shadow-lg);
     padding: 40px 23px;
     margin-bottom: 48px;
 }
@@ -71,7 +71,7 @@
     content: '';
     position: absolute;
     inset: 0;
-    background: linear-gradient(to bottom, #FF8C38, #FF7A1F);
+    background: var(--gradient-orange-primary);
     border-radius: 16px;
     filter: blur(40px);
     opacity: 0.1;
@@ -81,9 +81,9 @@
     position: relative;
     width: 100%;
     height: 100%;
-    background: linear-gradient(to bottom, #FF8C38, #FF7A1F);
+    background: var(--gradient-orange-primary);
     border-radius: 16px;
-    box-shadow: 0px 20px 25px -5px rgba(0,0,0,0.1), 0px 8px 10px -6px rgba(0,0,0,0.1);
+    box-shadow: var(--shadow-xl);
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -93,11 +93,11 @@
 }
 
 .rating-score {
-    font-family: 'Arimo', sans-serif;
+    font-family: var(--font-secondary);
     font-size: 4rem;
     font-weight: 700;
     line-height: 1;
-    color: white;
+    color: var(--color-white);
     text-align: center;
 }
 
@@ -129,20 +129,20 @@
 }
 
 .rating-title h2 {
-    font-family: 'Arimo', sans-serif;
+    font-family: var(--font-secondary);
     font-size: 1.5rem;
     font-weight: 700;
     line-height: 1.5;
-    color: #161616;
+    color: var(--color-black);
     margin: 0;
 }
 
 .rating-subtitle {
-    font-family: 'Arimo', sans-serif;
+    font-family: var(--font-secondary);
     font-size: 15px;
     font-weight: 400;
     line-height: 1.5;
-    color: #4D4D4D;
+    color: var(--color-gray);
     margin: 0;
 }
 
@@ -167,11 +167,11 @@
 }
 
 .rating-bar-label span {
-    font-family: 'Arimo', sans-serif;
+    font-family: var(--font-secondary);
     font-size: 15px;
     font-weight: 700;
     line-height: 1.5;
-    color: #161616;
+    color: var(--color-black);
 }
 
 .rating-bar-label svg {
@@ -184,23 +184,23 @@
     flex: 1;
     height: 10px;
     background-color: #FFEDD4;
-    border-radius: 999px;
+    border-radius: var(--radius-pill);
     overflow: hidden;
 }
 
 .rating-bar-fill {
     height: 100%;
-    background: linear-gradient(to bottom, #FF8C38, #FF7A1F);
-    border-radius: 999px;
-    transition: width 0.3s ease;
+    background: var(--gradient-orange-primary);
+    border-radius: var(--radius-pill);
+    transition: var(--transition-smooth);
 }
 
 .rating-bar-percent {
-    font-family: 'Arimo', sans-serif;
+    font-family: var(--font-secondary);
     font-size: 14px;
     font-weight: 700;
     line-height: 1.5;
-    color: #4D4D4D;
+    color: var(--color-gray);
     text-align: right;
     width: 48px;
     flex-shrink: 0;
@@ -217,11 +217,11 @@
     display: flex;
     align-items: center;
     gap: 12px;
-    font-family: 'Arimo', sans-serif;
+    font-family: var(--font-secondary);
     font-size: 1.375rem;
     font-weight: 700;
     line-height: 1.5;
-    color: #161616;
+    color: var(--color-black);
     margin: 0;
 }
 
@@ -240,7 +240,7 @@
 .review-card {
     background-color: rgba(255, 255, 255, 0.9);
     border-radius: 14px;
-    box-shadow: 0px 4px 6px -1px rgba(0,0,0,0.1), 0px 2px 4px -2px rgba(0,0,0,0.1);
+    box-shadow: var(--shadow-md);
     padding: 32px 23px;
     display: flex;
     flex-direction: column;
@@ -277,14 +277,14 @@
     width: 40px;
     height: 40px;
     border-radius: 50%;
-    background: linear-gradient(to bottom, #FF8C38, #FF7A1F);
+    background: var(--gradient-orange-primary);
     display: flex;
     align-items: center;
     justify-content: center;
-    font-family: 'Arimo', sans-serif;
+    font-family: var(--font-secondary);
     font-size: 16px;
     font-weight: 700;
-    color: white;
+    color: var(--color-white);
     flex-shrink: 0;
 }
 
@@ -295,11 +295,11 @@
 }
 
 .reviewer-name {
-    font-family: 'Arimo', sans-serif;
+    font-family: var(--font-secondary);
     font-size: 17px;
     font-weight: 700;
     line-height: 1.5;
-    color: #161616;
+    color: var(--color-black);
     margin: 0;
 }
 
@@ -307,7 +307,7 @@
     display: flex;
     align-items: center;
     gap: 6px;
-    font-family: 'Arimo', sans-serif;
+    font-family: var(--font-secondary);
     font-size: 14px;
     font-weight: 400;
     line-height: 1.5;
@@ -322,20 +322,20 @@
 }
 
 .review-van-badge {
-    background-color: #FFEAD0;
+    background-color: var(--color-secondary);
     border-radius: 8px;
     padding: 4px 12px;
-    font-family: 'Arimo', sans-serif;
+    font-family: var(--font-secondary);
     font-size: 12px;
     font-weight: 400;
     line-height: 1.33;
-    color: #161616;
+    color: var(--color-black);
     white-space: nowrap;
     flex-shrink: 0;
 }
 
 .review-text {
-    font-family: 'Arimo', sans-serif;
+    font-family: var(--font-secondary);
     font-size: 15px;
     font-weight: 400;
     line-height: 1.625;

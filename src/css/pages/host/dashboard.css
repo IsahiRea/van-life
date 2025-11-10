@@ -1,27 +1,27 @@
 /* Dashboard Page - Mobile First */
 .dashboard-container {
-    background-color: #FFF7ED;
-    padding: 48px 23px;
+    background-color: var(--bg-primary);
+    padding: var(--space-2xl) 23px;
 }
 
 .dashboard-header {
-    margin-bottom: 48px;
+    margin-bottom: var(--space-2xl);
 }
 
 .dashboard-header h1 {
-    font-family: 'Arimo', sans-serif;
-    font-size: 2rem;
-    font-weight: 700;
+    font-family: var(--font-secondary);
+    font-size: var(--font-size-2xl);
+    font-weight: var(--font-weight-bold);
     line-height: 1.25;
-    color: #161616;
-    margin: 0 0 16px 0;
+    color: var(--color-black);
+    margin: 0 0 var(--space-md) 0;
 }
 
 .dashboard-header p {
-    font-family: 'Arimo', sans-serif;
-    font-size: 1rem;
+    font-family: var(--font-secondary);
+    font-size: var(--font-size-base);
     line-height: 1.56;
-    color: #4D4D4D;
+    color: var(--color-gray);
     margin: 0;
 }
 
@@ -29,18 +29,18 @@
 .dashboard-stats-grid {
     display: grid;
     grid-template-columns: 1fr;
-    gap: 24px;
-    margin-bottom: 48px;
+    gap: var(--space-lg);
+    margin-bottom: var(--space-2xl);
 }
 
 .stat-card {
-    background-color: white;
-    border-radius: 10px;
-    box-shadow: 0px 1px 3px 0px rgba(0,0,0,0.1), 0px 1px 2px -1px rgba(0,0,0,0.1);
-    padding: 32px;
+    background-color: var(--color-white);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-sm);
+    padding: var(--space-xl);
     display: flex;
     flex-direction: column;
-    gap: 16px;
+    gap: var(--space-md);
 }
 
 .stat-card-header {
@@ -53,39 +53,39 @@
 .stat-icon {
     width: 48px;
     height: 48px;
-    background-color: #FFEAD0;
-    border-radius: 10px;
+    background-color: var(--color-secondary);
+    border-radius: var(--radius-lg);
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
 .stat-badge {
-    font-family: 'Arimo', sans-serif;
-    font-size: 14px;
-    font-weight: 700;
+    font-family: var(--font-secondary);
+    font-size: var(--font-size-sm);
+    font-weight: var(--font-weight-bold);
     line-height: 1.43;
 }
 
 .stat-badge.positive {
-    color: #00A63E;
+    color: var(--color-success);
 }
 
 .stat-label {
-    font-family: 'Arimo', sans-serif;
-    font-size: 14px;
-    font-weight: 400;
+    font-family: var(--font-secondary);
+    font-size: var(--font-size-sm);
+    font-weight: var(--font-weight-normal);
     line-height: 1.43;
-    color: #4D4D4D;
+    color: var(--color-gray);
     margin: 0;
 }
 
 .stat-value {
-    font-family: 'Arimo', sans-serif;
-    font-size: 2.25rem;
-    font-weight: 700;
+    font-family: var(--font-secondary);
+    font-size: var(--font-size-3xl);
+    font-weight: var(--font-weight-bold);
     line-height: 1.11;
-    color: #161616;
+    color: var(--color-black);
     margin: 0;
 }
 
@@ -93,18 +93,18 @@
 .dashboard-main-grid {
     display: grid;
     grid-template-columns: 1fr;
-    gap: 32px;
+    gap: var(--space-xl);
 }
 
 /* Income Card */
 .dashboard-income-card {
-    background: linear-gradient(to bottom, #FFEAD0, #FFDDB2);
-    border-radius: 10px;
-    box-shadow: 0px 1px 3px 0px rgba(0,0,0,0.1), 0px 1px 2px -1px rgba(0,0,0,0.1);
-    padding: 32px;
+    background: var(--gradient-orange-light);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-sm);
+    padding: var(--space-xl);
     display: flex;
     flex-direction: column;
-    gap: 24px;
+    gap: var(--space-lg);
 }
 
 .income-header {
@@ -116,53 +116,53 @@
 .income-info {
     display: flex;
     flex-direction: column;
-    gap: 12px;
+    gap: var(--space-sm);
 }
 
 .income-label {
     display: flex;
     align-items: center;
-    gap: 8px;
+    gap: var(--space-xs);
 }
 
 .income-label p {
-    font-family: 'Arimo', sans-serif;
-    font-size: 16px;
-    font-weight: 400;
-    line-height: 1.5;
-    color: #4D4D4D;
+    font-family: var(--font-secondary);
+    font-size: var(--font-size-base);
+    font-weight: var(--font-weight-normal);
+    line-height: var(--line-height-normal);
+    color: var(--color-gray);
     margin: 0;
 }
 
 .income-label .underlined {
-    font-weight: 700;
+    font-weight: var(--font-weight-bold);
     text-decoration: underline;
 }
 
 .income-amount {
-    font-family: 'Arimo', sans-serif;
+    font-family: var(--font-secondary);
     font-size: 3.75rem;
-    font-weight: 700;
+    font-weight: var(--font-weight-bold);
     line-height: 1.25;
-    color: #161616;
+    color: var(--color-black);
     margin: 0;
 }
 
 .income-change {
-    font-family: 'Arimo', sans-serif;
-    font-size: 14px;
-    font-weight: 400;
+    font-family: var(--font-secondary);
+    font-size: var(--font-size-sm);
+    font-weight: var(--font-weight-normal);
     line-height: 1.43;
-    color: #00A63E;
+    color: var(--color-success);
     margin: 0;
 }
 
 .details-link {
-    font-family: 'Arimo', sans-serif;
-    font-size: 16px;
-    font-weight: 700;
-    line-height: 1.5;
-    color: #161616;
+    font-family: var(--font-secondary);
+    font-size: var(--font-size-base);
+    font-weight: var(--font-weight-bold);
+    line-height: var(--line-height-normal);
+    color: var(--color-black);
     text-decoration: underline;
 }
 
@@ -172,27 +172,27 @@
 
 .income-chart {
     background-color: rgba(255, 255, 255, 0.5);
-    border-radius: 10px;
-    padding: 16px;
+    border-radius: var(--radius-lg);
+    padding: var(--space-md);
     display: flex;
     align-items: flex-end;
     justify-content: space-between;
-    gap: 8px;
+    gap: var(--space-xs);
     height: 96px;
 }
 
 .chart-bar {
     flex: 1;
-    background-color: #FF8C38;
+    background-color: var(--color-primary);
     border-radius: 4px 4px 0 0;
     min-height: 40px;
 }
 
 /* Vans Section */
 .dashboard-vans-section {
-    background-color: white;
-    border-radius: 10px;
-    box-shadow: 0px 1px 3px 0px rgba(0,0,0,0.1), 0px 1px 2px -1px rgba(0,0,0,0.1);
+    background-color: var(--color-white);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-sm);
     padding: 32px;
 }
 
@@ -204,20 +204,20 @@
 }
 
 .section-header h2 {
-    font-family: 'Arimo', sans-serif;
+    font-family: var(--font-secondary);
     font-size: 1.875rem;
     font-weight: 700;
     line-height: 1.2;
-    color: #161616;
+    color: var(--color-black);
     margin: 0;
 }
 
 .view-all-link {
-    font-family: 'Arimo', sans-serif;
+    font-family: var(--font-secondary);
     font-size: 16px;
     font-weight: 700;
     line-height: 1.5;
-    color: #FF8C38;
+    color: var(--color-primary);
     text-decoration: underline;
 }
 
@@ -232,8 +232,8 @@
 }
 
 .dashboard-van-item {
-    background-color: #FFF7ED;
-    border-radius: 10px;
+    background-color: var(--bg-primary);
+    border-radius: var(--radius-lg);
     padding: 24px;
     display: flex;
     align-items: center;
@@ -243,8 +243,8 @@
 .dashboard-van-item img {
     width: 96px;
     height: 96px;
-    border-radius: 10px;
-    box-shadow: 0px 1px 3px 0px rgba(0,0,0,0.1), 0px 1px 2px -1px rgba(0,0,0,0.1);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-sm);
     object-fit: cover;
 }
 
@@ -256,20 +256,20 @@
 }
 
 .dashboard-van-info h3 {
-    font-family: 'Arimo', sans-serif;
+    font-family: var(--font-secondary);
     font-size: 1.5rem;
     font-weight: 700;
     line-height: 1.33;
-    color: #161616;
+    color: var(--color-black);
     margin: 0;
 }
 
 .dashboard-van-info > p {
-    font-family: 'Arimo', sans-serif;
+    font-family: var(--font-secondary);
     font-size: 1.125rem;
     font-weight: 400;
     line-height: 1.56;
-    color: #4D4D4D;
+    color: var(--color-gray);
     margin: 0;
 }
 
@@ -280,24 +280,24 @@
 }
 
 .dashboard-van-stats span {
-    font-family: 'Arimo', sans-serif;
+    font-family: var(--font-secondary);
     font-size: 14px;
     font-weight: 400;
     line-height: 1.43;
-    color: #4D4D4D;
+    color: var(--color-gray);
 }
 
 .dashboard-van-stats strong {
     font-weight: 700;
-    color: #161616;
+    color: var(--color-black);
 }
 
 .dashboard-van-edit {
-    font-family: 'Arimo', sans-serif;
+    font-family: var(--font-secondary);
     font-size: 16px;
     font-weight: 700;
     line-height: 1.5;
-    color: #161616;
+    color: var(--color-black);
     text-decoration: underline;
     white-space: nowrap;
 }
@@ -308,9 +308,9 @@
 
 /* Review Card */
 .dashboard-review-card {
-    background: linear-gradient(to bottom, #FFDDB2, #FFCC8D);
-    border-radius: 10px;
-    box-shadow: 0px 1px 3px 0px rgba(0,0,0,0.1), 0px 1px 2px -1px rgba(0,0,0,0.1);
+    background: var(--gradient-orange-medium);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-sm);
     padding: 32px;
 }
 
@@ -322,20 +322,20 @@
 }
 
 .review-header h3 {
-    font-family: 'Arimo', sans-serif;
+    font-family: var(--font-secondary);
     font-size: 1.5rem;
     font-weight: 700;
     line-height: 1.33;
-    color: #161616;
+    color: var(--color-black);
     margin: 0;
 }
 
 .details-link-small {
-    font-family: 'Arimo', sans-serif;
+    font-family: var(--font-secondary);
     font-size: 14px;
     font-weight: 700;
     line-height: 1.43;
-    color: #161616;
+    color: var(--color-black);
     text-decoration: underline;
 }
 
@@ -357,19 +357,19 @@
 }
 
 .score-number {
-    font-family: 'Arimo', sans-serif;
+    font-family: var(--font-secondary);
     font-size: 3rem;
     font-weight: 700;
     line-height: 1;
-    color: #161616;
+    color: var(--color-black);
 }
 
 .score-suffix {
-    font-family: 'Arimo', sans-serif;
+    font-family: var(--font-secondary);
     font-size: 1.25rem;
     font-weight: 400;
     line-height: 1.4;
-    color: #4D4D4D;
+    color: var(--color-gray);
 }
 
 .review-breakdown {
@@ -385,11 +385,11 @@
 }
 
 .review-stars {
-    font-family: 'Arimo', sans-serif;
+    font-family: var(--font-secondary);
     font-size: 14px;
     font-weight: 400;
     line-height: 1.43;
-    color: #161616;
+    color: var(--color-black);
     width: 32px;
 }
 
@@ -403,34 +403,34 @@
 
 .review-bar-fill {
     height: 100%;
-    background-color: #FF8C38;
+    background-color: var(--color-primary);
     border-radius: 999px;
 }
 
 .review-percent {
-    font-family: 'Arimo', sans-serif;
+    font-family: var(--font-secondary);
     font-size: 14px;
     font-weight: 400;
     line-height: 1.43;
-    color: #4D4D4D;
+    color: var(--color-gray);
     width: 32px;
     text-align: right;
 }
 
 /* Quick Actions */
 .dashboard-quick-actions {
-    background-color: white;
-    border-radius: 10px;
-    box-shadow: 0px 1px 3px 0px rgba(0,0,0,0.1), 0px 1px 2px -1px rgba(0,0,0,0.1);
+    background-color: var(--color-white);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-sm);
     padding: 32px;
 }
 
 .dashboard-quick-actions h3 {
-    font-family: 'Arimo', sans-serif;
+    font-family: var(--font-secondary);
     font-size: 1.25rem;
     font-weight: 700;
     line-height: 1.4;
-    color: #161616;
+    color: var(--color-black);
     margin: 0 0 16px 0;
 }
 
@@ -441,12 +441,12 @@
 }
 
 .action-btn {
-    font-family: 'Arimo', sans-serif;
+    font-family: var(--font-secondary);
     font-size: 16px;
     font-weight: 700;
     line-height: 1.5;
     padding: 12px 24px;
-    border-radius: 10px;
+    border-radius: var(--radius-lg);
     border: none;
     cursor: pointer;
     transition: opacity 0.2s;
@@ -457,29 +457,29 @@
 }
 
 .action-btn.primary {
-    background-color: #FF8C38;
+    background-color: var(--color-primary);
     color: white;
 }
 
 .action-btn.secondary {
-    background-color: #FFEAD0;
-    color: #161616;
+    background-color: var(--color-secondary);
+    color: var(--color-black);
 }
 
 /* Recent Activity */
 .dashboard-recent-activity {
-    background-color: white;
-    border-radius: 10px;
-    box-shadow: 0px 1px 3px 0px rgba(0,0,0,0.1), 0px 1px 2px -1px rgba(0,0,0,0.1);
+    background-color: var(--color-white);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-sm);
     padding: 24px;
 }
 
 .dashboard-recent-activity h3 {
-    font-family: 'Arimo', sans-serif;
+    font-family: var(--font-secondary);
     font-size: 1.25rem;
     font-weight: 700;
     line-height: 1.4;
-    color: #161616;
+    color: var(--color-black);
     margin: 0 0 16px 0;
 }
 
@@ -505,7 +505,7 @@
 }
 
 .activity-dot.active {
-    background-color: #FF8C38;
+    background-color: var(--color-primary);
 }
 
 .activity-content {
@@ -513,27 +513,27 @@
 }
 
 .activity-text {
-    font-family: 'Arimo', sans-serif;
+    font-family: var(--font-secondary);
     font-size: 14px;
     font-weight: 400;
     line-height: 1.43;
-    color: #161616;
+    color: var(--color-black);
     margin: 0 0 4px 0;
 }
 
 .activity-time {
-    font-family: 'Arimo', sans-serif;
+    font-family: var(--font-secondary);
     font-size: 12px;
     font-weight: 400;
     line-height: 1.33;
-    color: #4D4D4D;
+    color: var(--color-gray);
     margin: 0;
 }
 
 .loading {
     text-align: center;
     padding: 20px;
-    color: #4D4D4D;
+    color: var(--color-gray);
 }
 
 /* Tablet Responsive Styles */

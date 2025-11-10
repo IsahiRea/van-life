@@ -1,7 +1,7 @@
 /* Host Van Detail Page - Shared Styles - Mobile First */
 
 .host-van-detail-container {
-    background-color: #FFF7ED;
+    background-color: var(--bg-primary);
     padding: 48px 23px;
     min-height: 100vh;
 }
@@ -11,14 +11,14 @@
     display: flex;
     align-items: center;
     gap: 8px;
-    font-family: 'Arimo', sans-serif;
+    font-family: var(--font-secondary);
     font-size: 15px;
     font-weight: 400;
     line-height: 1.5;
-    color: #201F1D;
+    color: var(--color-black-alt);
     text-decoration: underline;
     margin-bottom: 32px;
-    transition: opacity 0.2s;
+    transition: var(--transition-base);
 }
 
 .host-van-detail-back-link:hover {
@@ -36,8 +36,7 @@
     border-radius: 14px;
     padding: 32px 24px;
     margin-bottom: 32px;
-    box-shadow: 0px 10px 15px -3px rgba(0, 0, 0, 0.1),
-                0px 4px 6px -4px rgba(0, 0, 0, 0.1);
+    box-shadow: var(--shadow-lg);
 }
 
 /* Header Section */
@@ -81,33 +80,33 @@
     display: inline-block;
     padding: 6px 16px;
     border-radius: 8px;
-    font-family: 'Arimo', sans-serif;
+    font-family: var(--font-secondary);
     font-size: 12px;
     font-weight: 400;
     line-height: 1.33;
-    color: #FFEAD0;
+    color: var(--color-secondary);
     width: fit-content;
     text-transform: capitalize;
 }
 
 .host-van-type-badge.van-type-simple {
-    background-color: #E17654;
+    background-color: var(--color-simple);
 }
 
 .host-van-type-badge.van-type-rugged {
-    background-color: #115E59;
+    background-color: var(--color-rugged);
 }
 
 .host-van-type-badge.van-type-luxury {
-    background-color: #161616;
+    background-color: var(--color-black);
 }
 
 .host-van-detail-title {
-    font-family: 'Arimo', sans-serif;
+    font-family: var(--font-secondary);
     font-size: 28px;
     font-weight: 700;
     line-height: 1.5;
-    color: #161616;
+    color: var(--color-black);
     margin: 0;
 }
 
@@ -118,19 +117,19 @@
 }
 
 .price-amount {
-    font-family: 'Arimo', sans-serif;
+    font-family: var(--font-secondary);
     font-size: 28px;
     font-weight: 700;
     line-height: 1.5;
-    color: #161616;
+    color: var(--color-black);
 }
 
 .price-period {
-    font-family: 'Arimo', sans-serif;
+    font-family: var(--font-secondary);
     font-size: 18px;
     font-weight: 400;
     line-height: 1.5;
-    color: #4D4D4D;
+    color: var(--color-gray);
 }
 
 /* Meta Grid */
@@ -142,7 +141,7 @@
 
 .host-van-meta-item {
     background-color: rgba(255, 247, 237, 0.5);
-    border-radius: 10px;
+    border-radius: var(--radius-lg);
     padding: 16px;
     display: flex;
     flex-direction: column;
@@ -161,19 +160,19 @@
 }
 
 .meta-label {
-    font-family: 'Arimo', sans-serif;
+    font-family: var(--font-secondary);
     font-size: 13px;
     font-weight: 400;
     line-height: 1.5;
-    color: #4D4D4D;
+    color: var(--color-gray);
 }
 
 .meta-value {
-    font-family: 'Arimo', sans-serif;
+    font-family: var(--font-secondary);
     font-size: 15px;
     font-weight: 700;
     line-height: 1.5;
-    color: #161616;
+    color: var(--color-black);
     margin: 0;
 }
 
@@ -182,8 +181,7 @@
     background-color: rgba(255, 255, 255, 0.9);
     border-radius: 14px;
     overflow: hidden;
-    box-shadow: 0px 10px 15px -3px rgba(0, 0, 0, 0.1),
-                0px 4px 6px -4px rgba(0, 0, 0, 0.1);
+    box-shadow: var(--shadow-lg);
 }
 
 /* Tabs Navigation */
@@ -199,15 +197,15 @@
     gap: 8px;
     padding: 20px 0;
     margin-right: 32px;
-    font-family: 'Arimo', sans-serif;
+    font-family: var(--font-secondary);
     font-size: 14px;
     font-weight: 400;
     line-height: 1.5;
-    color: #4D4D4D;
+    color: var(--color-gray);
     text-decoration: none;
     border-bottom: 4px solid transparent;
     margin-bottom: -1px;
-    transition: color 0.2s;
+    transition: var(--transition-color);
     position: relative;
 }
 
@@ -217,13 +215,13 @@
 }
 
 .tab-link.active {
-    color: #161616;
-    border-bottom-color: #FF8C38;
+    color: var(--color-black);
+    border-bottom-color: var(--color-primary);
     border-radius: 100px 100px 0 0;
 }
 
 .tab-link:hover {
-    color: #161616;
+    color: var(--color-black);
 }
 
 /* Tab Content */

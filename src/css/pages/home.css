@@ -1,17 +1,17 @@
 /*** HOME PAGE ***/
 .home-container {
-    background: linear-gradient(0deg, rgba(0, 0, 0, 0.46), rgba(0, 0, 0, 0.46)), url("../../assets/images/home-hero.png") no-repeat center center;
+    background: var(--gradient-hero), url("../../assets/images/home-hero.png") no-repeat center center;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
     min-height: 350px;
-    color: white;
+    color: var(--color-white);
     padding: 45px 23px;
 }
 
 .home-container h1 {
-    font-weight: 700;
+    font-weight: var(--font-weight-bold);
     font-size: 2.25rem;
     line-height: 42px;
 }
@@ -24,16 +24,16 @@
     display: inline-block;
     text-align: center;
     text-decoration: none;
-    background-color: #FF8C38;
+    background-color: var(--color-primary);
     border: none;
     width: 100%;
     margin-top: 27px;
     padding-block: .75rem;
-    color: white;
-    font-weight: 700;
-    border-radius: 5px;
+    color: var(--color-white);
+    font-weight: var(--font-weight-bold);
+    border-radius: var(--radius-md);
     cursor: pointer;
-    transition: transform .1s ease-in-out;
+    transition: transform var(--transition-fast);
 }
 
 .home-container a:hover {
@@ -42,34 +42,34 @@
 
 /* Features Section - Mobile First */
 .home-features {
-    background-color: white;
+    background-color: var(--color-white);
     padding: 48px 23px;
 }
 
 .home-features-header {
     text-align: center;
-    margin-bottom: 32px;
+    margin-bottom: var(--space-xl);
 }
 
 .home-features-header h2 {
     font-size: 1.75rem;
-    font-weight: 700;
-    color: #161616;
-    margin: 0 0 16px 0;
-    line-height: 1.2;
+    font-weight: var(--font-weight-bold);
+    color: var(--color-black);
+    margin: 0 0 var(--space-md) 0;
+    line-height: var(--line-height-tight);
 }
 
 .home-features-header p {
     font-size: 1rem;
-    color: #4D4D4D;
+    color: var(--color-gray);
     margin: 0;
-    line-height: 1.5;
+    line-height: var(--line-height-normal);
 }
 
 .home-features-grid {
     display: grid;
     grid-template-columns: 1fr;
-    gap: 32px;
+    gap: var(--space-xl);
 }
 
 .feature-card {
@@ -77,37 +77,37 @@
 }
 
 .feature-icon {
-    background-color: #FFEAD0;
+    background-color: var(--color-secondary);
     width: 80px;
     height: 80px;
-    border-radius: 50%;
+    border-radius: var(--radius-full);
     display: flex;
     align-items: center;
     justify-content: center;
-    margin: 0 auto 16px;
+    margin: 0 auto var(--space-md);
 }
 
 .feature-card h3 {
     font-size: 1.25rem;
-    font-weight: 700;
-    color: #161616;
-    margin: 0 0 12px 0;
+    font-weight: var(--font-weight-bold);
+    color: var(--color-black);
+    margin: 0 0 var(--space-sm) 0;
 }
 
 .feature-card p {
     font-size: 0.875rem;
-    color: #4D4D4D;
+    color: var(--color-gray);
     margin: 0;
-    line-height: 1.6;
+    line-height: var(--line-height-relaxed);
 }
 
 /* Stats Section - Mobile First */
 .home-stats {
-    background-color: #FF8C38;
+    background-color: var(--color-primary);
     padding: 40px 23px;
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 24px;
+    gap: var(--space-lg);
 }
 
 .stat-item {
@@ -116,60 +116,60 @@
 
 .stat-item h3 {
     font-size: 2rem;
-    font-weight: 700;
-    color: white;
-    margin: 0 0 8px 0;
+    font-weight: var(--font-weight-bold);
+    color: var(--color-white);
+    margin: 0 0 var(--space-xs) 0;
 }
 
 .stat-item p {
     font-size: 0.875rem;
-    color: #FFEAD0;
+    color: var(--color-secondary);
     margin: 0;
 }
 
 /* CTA Section - Mobile First */
 .home-cta {
-    background-color: #FFEAD0;
+    background-color: var(--color-secondary);
     padding: 48px 23px;
 }
 
 .home-cta-image {
-    margin-bottom: 32px;
+    margin-bottom: var(--space-xl);
 }
 
 .home-cta-image img {
     width: 100%;
     height: auto;
-    border-radius: 10px;
-    box-shadow: 0px 20px 25px -5px rgba(0,0,0,0.1), 0px 8px 10px -6px rgba(0,0,0,0.1);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-xl);
 }
 
 .home-cta-content h2 {
     font-size: 1.75rem;
-    font-weight: 700;
-    color: #161616;
-    margin: 0 0 16px 0;
-    line-height: 1.2;
+    font-weight: var(--font-weight-bold);
+    color: var(--color-black);
+    margin: 0 0 var(--space-md) 0;
+    line-height: var(--line-height-tight);
 }
 
 .home-cta-content p {
     font-size: 1rem;
-    color: #4D4D4D;
-    margin: 0 0 24px 0;
-    line-height: 1.6;
+    color: var(--color-gray);
+    margin: 0 0 var(--space-lg) 0;
+    line-height: var(--line-height-relaxed);
 }
 
 .home-cta-button {
     display: inline-block;
-    background-color: #161616;
-    color: white;
-    padding: 16px 48px;
-    border-radius: 10px;
+    background-color: var(--color-black);
+    color: var(--color-white);
+    padding: var(--space-md) 48px;
+    border-radius: var(--radius-lg);
     text-decoration: none;
-    font-weight: 700;
+    font-weight: var(--font-weight-bold);
     font-size: 1rem;
-    box-shadow: 0px 10px 15px -3px rgba(0,0,0,0.1), 0px 4px 6px -4px rgba(0,0,0,0.1);
-    transition: transform .1s ease-in-out;
+    box-shadow: var(--shadow-lg);
+    transition: transform var(--transition-fast);
 }
 
 .home-cta-button:hover {
@@ -185,19 +185,19 @@
 
     .home-container h1 {
         font-size: 3rem;
-        line-height: 1.2;
+        line-height: var(--line-height-tight);
         max-width: 600px;
     }
 
     .home-container p {
         font-size: 1.125rem;
-        line-height: 1.6;
+        line-height: var(--line-height-relaxed);
         max-width: 500px;
     }
 
     .home-container a {
         width: auto;
-        padding: 16px 48px;
+        padding: var(--space-md) 48px;
         font-size: 1.125rem;
     }
 
@@ -221,7 +221,7 @@
     .home-stats {
         grid-template-columns: repeat(4, 1fr);
         padding: 60px 60px;
-        gap: 32px;
+        gap: var(--space-xl);
     }
 
     .stat-item h3 {
@@ -266,7 +266,7 @@
 
     .home-container h1 {
         font-size: 3.75rem;
-        line-height: 1.2;
+        line-height: var(--line-height-tight);
         max-width: 700px;
     }
 
