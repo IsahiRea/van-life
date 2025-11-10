@@ -33,9 +33,9 @@ header .site-logo {
 .hamburger {
     width: 25px;
     height: 2px;
-    background-color: #161616;
+    background-color: var(--color-black);
     position: relative;
-    transition: all 0.3s ease;
+    transition: all var(--transition-smooth);
 }
 
 .hamburger::before,
@@ -44,8 +44,8 @@ header .site-logo {
     position: absolute;
     width: 25px;
     height: 2px;
-    background-color: #161616;
-    transition: all 0.3s ease;
+    background-color: var(--color-black);
+    transition: all var(--transition-smooth);
 }
 
 .hamburger::before {
@@ -77,13 +77,13 @@ header .site-logo {
     right: -100%;
     width: 70%;
     height: 100vh;
-    background-color: #FFF7ED;
+    background-color: var(--bg-primary);
     display: flex;
     flex-direction: column;
     padding: 80px 20px 20px;
-    transition: right 0.3s ease;
+    transition: right var(--transition-smooth);
     z-index: 1000;
-    box-shadow: -2px 0 10px rgba(0, 0, 0, 0.1);
+    box-shadow: var(--shadow-mobile);
 }
 
 .main-nav.open {
@@ -92,32 +92,32 @@ header .site-logo {
 
 .main-nav a {
     text-decoration: none;
-    color: #4D4D4D;
-    font-weight: 600;
+    color: var(--color-gray);
+    font-weight: var(--font-weight-semibold);
     padding: 15px 10px;
-    font-size: 18px;
-    border-bottom: 1px solid #E5E5E5;
+    font-size: var(--font-size-md);
+    border-bottom: 1px solid var(--color-gray-light);
 }
 
 .main-nav a:hover {
-    color: #161616;
+    color: var(--color-black);
     text-decoration: underline;
 }
 
 .main-nav button {
     cursor: pointer;
-    background-color: #FF8C38;
-    color: white;
+    background-color: var(--color-primary);
+    color: var(--color-white);
     border: none;
-    padding: 12px 20px;
-    font-size: 16px;
-    font-weight: 600;
-    border-radius: 5px;
+    padding: var(--space-sm) var(--space-lg);
+    font-size: var(--font-size-base);
+    font-weight: var(--font-weight-semibold);
+    border-radius: var(--radius-md);
     margin-top: 10px;
 }
 
 .main-nav button:hover {
-    background-color: #e67a2e;
+    background-color: var(--color-primary-hover);
 }
 
 .main-nav .login-icon {
@@ -128,8 +128,8 @@ header .site-logo {
 .main-nav .login-link {
     display: inline-flex;
     align-items: center;
-    gap: 8px;
-    border-bottom: 1px solid #E5E5E5;
+    gap: var(--space-xs);
+    border-bottom: 1px solid var(--color-gray-light);
 }
 
 /* Tablet breakpoint */
