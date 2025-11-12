@@ -1,0 +1,63 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    // Users collection - users can only read/write their own document
+    match /users/{userId} {
+      allow read: if request.auth != null && request.auth.uid == userId;
+      allow create: if request.auth != null && request.auth.uid == userId;
+      allow update: if request.auth != null && request.auth.uid == userId;
+      allow delete: if false;  // Prevent account deletion via client
+    }
+
+    // Vans collection - public read, but only hosts can manage their vans
+    match /vans/{vanId} {
+      // Anyone can view van listings (public marketplace)
+      allow read: if true;
+
+      // Only authenticated hosts can create vans
+      allow create: if request.auth != null
+                    && request.resource.data.hostId == request.auth.uid;
+
+      // Only the van owner can update their van
+      allow update: if request.auth != null
+                    && resource.data.hostId == request.auth.uid
+                    && request.resource.data.hostId == request.auth.uid;  // Prevent ownership transfer
+
+      // Only the van owner can delete their van
+      allow delete: if request.auth != null
+                    && resource.data.hostId == request.auth.uid;
+    }
+
+    // Bookings collection (for future implementation)
+    match /bookings/{bookingId} {
+      // Users can read their own bookings
+      allow read: if request.auth != null
+                  && (resource.data.userId == request.auth.uid
+                      || resource.data.hostId == request.auth.uid);
+
+      // Users can create bookings
+      allow create: if request.auth != null
+                    && request.resource.data.userId == request.auth.uid;
+
+      // Only booking creator or host can update
+      allow update: if request.auth != null
+                    && (resource.data.userId == request.auth.uid
+                        || resource.data.hostId == request.auth.uid);
+    }
+
+    // Reviews collection (for future implementation)
+    match /reviews/{reviewId} {
+      // Anyone can read reviews
+      allow read: if true;
+
+      // Only authenticated users can create reviews
+      allow create: if request.auth != null
+                    && request.resource.data.userId == request.auth.uid;
+
+      // Only review author can update/delete
+      allow update, delete: if request.auth != null
+                            && resource.data.userId == request.auth.uid;
+    }
+  }
+}
