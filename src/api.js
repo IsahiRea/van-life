@@ -5,7 +5,10 @@ import {
     createUserWithEmailAndPassword,
     signInWithEmailAndPassword,
     signOut,
-    onAuthStateChanged
+    onAuthStateChanged,
+    sendPasswordResetEmail,
+    sendEmailVerification,
+    updateProfile
 } from "firebase/auth";
 
 const firebaseConfig = {
@@ -124,4 +127,71 @@ export async function getUserProfile(userId) {
         id: userSnapshot.id,
         ...userSnapshot.data()
     };
+}
+
+// Password reset function
+export async function resetPassword(email) {
+    try {
+        await sendPasswordResetEmail(auth, email, {
+            url: window.location.origin + '/login',
+            handleCodeInApp: false
+        });
+        return { success: true };
+    } catch (error) {
+        throw new Error(error.message);
+    }
+}
+
+// Email verification function
+export async function sendVerificationEmail() {
+    const user = auth.currentUser;
+
+    if (!user) {
+        throw new Error("No user logged in");
+    }
+
+    try {
+        await sendEmailVerification(user, {
+            url: window.location.origin + '/host',
+            handleCodeInApp: false
+        });
+        return { success: true };
+    } catch (error) {
+        throw new Error(error.message);
+    }
+}
+
+// Update user profile function
+export async function updateUserProfile({ displayName, photoURL, bio }) {
+    const user = auth.currentUser;
+
+    if (!user) {
+        throw new Error("No user logged in");
+    }
+
+    try {
+        // Update Firebase Auth profile
+        if (displayName || photoURL) {
+            await updateProfile(user, {
+                ...(displayName && { displayName }),
+                ...(photoURL && { photoURL })
+            });
+        }
+
+        // Update Firestore user document
+        const userDocRef = doc(db, "users", user.uid);
+        const updateData = {
+            updatedAt: new Date().toISOString()
+        };
+
+        if (displayName) updateData.displayName = displayName;
+        if (photoURL) updateData.photoURL = photoURL;
+        if (bio !== undefined) updateData.bio = bio;
+
+        await setDoc(userDocRef, updateData, { merge: true });
+
+        return { success: true };
+    } catch (error) {
+        throw new Error(error.message);
+    }
 }
