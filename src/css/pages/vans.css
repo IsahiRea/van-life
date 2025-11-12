@@ -189,7 +189,7 @@
     color: #4D4D4D;
 }
 
-.stat-value {
+.quick-stats-container .stat-value {
     font-family: 'Arimo', sans-serif;
     font-size: 16px;
     font-weight: 700;
@@ -197,7 +197,7 @@
     color: #161616;
 }
 
-.stat-value.showing {
+.quick-stats-container .stat-value.showing {
     color: #FF8C38;
 }
 
