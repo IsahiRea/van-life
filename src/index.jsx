@@ -7,6 +7,7 @@ import {
   Route,
   Link
 } from "react-router-dom"
+import { AuthProvider } from './context/AuthContext';
 import Home from "./pages/Home"
 import About from "./pages/About"
 import Vans, { loader as vansLoader } from "./pages/Vans/Vans"
@@ -21,12 +22,15 @@ import HostVanPricing from "./pages/Host/HostVanPricing"
 import HostVanPhotos from "./pages/Host/HostVanPhotos"
 import NotFound from "./pages/NotFound"
 import Login, { loader as loginLoader, action as loginAction } from "./pages/Login"
+import SignUp from "./pages/SignUp"
+import ForgotPassword from "./pages/ForgotPassword"
 import Layout from "./components/Layout"
 import HostLayout from "./components/HostLayout"
 import Error from "./components/Error"
 import { requireAuth } from "./utils"
 
-import "./server"
+// MirageJS server disabled - now using Firebase Authentication
+// import "./server"
 import "./css/main.css"
 
 const router = createBrowserRouter(createRoutesFromElements(
@@ -38,6 +42,14 @@ const router = createBrowserRouter(createRoutesFromElements(
       element={<Login />}
       loader={loginLoader}
       action={loginAction}
+    />
+    <Route
+      path="signup"
+      element={<SignUp />}
+    />
+    <Route
+      path="forgot-password"
+      element={<ForgotPassword />}
     />
     <Route
       path="vans"
@@ -103,7 +115,9 @@ const router = createBrowserRouter(createRoutesFromElements(
 
 function App() {
   return (
-    <RouterProvider router={router} />
+    <AuthProvider>
+      <RouterProvider router={router} />
+    </AuthProvider>
   )
 }
 

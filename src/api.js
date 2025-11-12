@@ -1,5 +1,15 @@
 import { initializeApp } from "firebase/app";
-import { getFirestore, collection, doc, getDocs, getDoc, query, where } from "firebase/firestore/lite";
+import { getFirestore, collection, doc, getDocs, getDoc, query, where, setDoc } from "firebase/firestore/lite";
+import {
+    getAuth,
+    createUserWithEmailAndPassword,
+    signInWithEmailAndPassword,
+    signOut,
+    onAuthStateChanged,
+    sendPasswordResetEmail,
+    sendEmailVerification,
+    updateProfile
+} from "firebase/auth";
 
 const firebaseConfig = {
   apiKey: "AIzaSyAalVUUmQ5jPFGKBBB8Bn6HfJFVnGqwzc4",
@@ -13,6 +23,7 @@ const firebaseConfig = {
 
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
+export const auth = getAuth(app);
 
 const vansCollectionRef = collection(db, 'vans');
 
@@ -36,28 +47,151 @@ export async function getVan(id) {
 }
 
 export async function getHostVans() {
-    const q = query(vansCollectionRef, where("hostId", "==", "123"))
+    const user = auth.currentUser;
+
+    if (!user) {
+        throw new Error("You must be logged in to view your vans");
+    }
+
+    const q = query(vansCollectionRef, where("hostId", "==", user.uid));
     const snapshot = await getDocs(q);
     const vans = snapshot.docs.map(doc => ({
         ...doc.data(),
         id: doc.id
-    }))
-    return vans
+    }));
+
+    return vans;
 }
 
-export async function loginUser(creds) {
-    const res = await fetch("/api/login",
-        { method: "post", body: JSON.stringify(creds) }
-    )
-    const data = await res.json()
+// Sign up function
+export async function signUpUser({ email, password, name }) {
+    try {
+        // Create Firebase Auth user
+        const userCredential = await createUserWithEmailAndPassword(
+            auth,
+            email,
+            password
+        );
 
-    if (!res.ok) {
-        throw {
-            message: data.message,
-            statusText: res.statusText,
-            status: res.status
-        }
+        const user = userCredential.user;
+
+        // Create user profile document in Firestore
+        const userDocRef = doc(db, "users", user.uid);
+        await setDoc(userDocRef, {
+            uid: user.uid,
+            email: user.email,
+            name: name,
+            createdAt: new Date().toISOString(),
+            role: "host"
+        });
+
+        return { user: userCredential.user };
+    } catch (error) {
+        throw new Error(error.message);
+    }
+}
+
+// Sign in function
+export async function signInUser({ email, password }) {
+    try {
+        const userCredential = await signInWithEmailAndPassword(
+            auth,
+            email,
+            password
+        );
+        return { user: userCredential.user };
+    } catch (error) {
+        throw new Error(error.message);
+    }
+}
+
+// Sign out function
+export async function signOutUser() {
+    try {
+        await signOut(auth);
+    } catch (error) {
+        throw new Error(error.message);
+    }
+}
+
+// Get user profile from Firestore
+export async function getUserProfile(userId) {
+    const userDocRef = doc(db, "users", userId);
+    const userSnapshot = await getDoc(userDocRef);
+
+    if (!userSnapshot.exists()) {
+        throw new Error("User profile not found");
     }
 
-    return data
+    return {
+        id: userSnapshot.id,
+        ...userSnapshot.data()
+    };
+}
+
+// Password reset function
+export async function resetPassword(email) {
+    try {
+        await sendPasswordResetEmail(auth, email, {
+            url: window.location.origin + '/login',
+            handleCodeInApp: false
+        });
+        return { success: true };
+    } catch (error) {
+        throw new Error(error.message);
+    }
+}
+
+// Email verification function
+export async function sendVerificationEmail() {
+    const user = auth.currentUser;
+
+    if (!user) {
+        throw new Error("No user logged in");
+    }
+
+    try {
+        await sendEmailVerification(user, {
+            url: window.location.origin + '/host',
+            handleCodeInApp: false
+        });
+        return { success: true };
+    } catch (error) {
+        throw new Error(error.message);
+    }
+}
+
+// Update user profile function
+export async function updateUserProfile({ displayName, photoURL, bio }) {
+    const user = auth.currentUser;
+
+    if (!user) {
+        throw new Error("No user logged in");
+    }
+
+    try {
+        // Update Firebase Auth profile
+        if (displayName || photoURL) {
+            await updateProfile(user, {
+                ...(displayName && { displayName }),
+                ...(photoURL && { photoURL })
+            });
+        }
+
+        // Update Firestore user document
+        const userDocRef = doc(db, "users", user.uid);
+        const updateData = {
+            updatedAt: new Date().toISOString()
+        };
+
+        if (displayName) updateData.displayName = displayName;
+        if (photoURL) updateData.photoURL = photoURL;
+        if (bio !== undefined) updateData.bio = bio;
+
+        await setDoc(userDocRef, updateData, { merge: true });
+
+        return { success: true };
+    } catch (error) {
+        throw new Error(error.message);
+    }
 }
