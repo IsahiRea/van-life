@@ -1,9 +1,13 @@
 import React from "react"
-import { Link, NavLink } from "react-router-dom"
+import { Link, NavLink, useNavigate } from "react-router-dom"
+import { useAuth } from "../context/AuthContext"
+import { signOutUser } from "../api"
 import avatarIcon from "../assets/images/avatar-icon.png"
 
 export default function Header() {
     const [isMenuOpen, setIsMenuOpen] = React.useState(false)
+    const { currentUser } = useAuth()
+    const navigate = useNavigate()
 
     const activeStyles = {
         fontWeight: "bold",
@@ -11,8 +15,14 @@ export default function Header() {
         color: "#161616"
     }
 
-    function fakeLogOut() {
-        localStorage.removeItem("loggedin")
+    async function handleLogout() {
+        try {
+            await signOutUser();
+            closeMenu();
+            navigate("/login");
+        } catch (error) {
+            console.error("Logout failed:", error);
+        }
     }
 
     function toggleMenu() {
@@ -58,13 +68,16 @@ export default function Header() {
                     Vans
                 </NavLink>
 
-                {localStorage.getItem("loggedin") ? (
-                    <button onClick={() => {fakeLogOut(); closeMenu();}}>Logout</button>
+                {currentUser ? (
+                    <button onClick={handleLogout} className="logout-button">
+                        Logout
+                    </button>
                 ) : (
                     <Link to="login" className="login-link" onClick={closeMenu}>
                         <img
                             src={avatarIcon}
                             className="login-icon"
+                            alt="Login"
                         />
                     </Link>
                 )}
