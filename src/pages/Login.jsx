@@ -7,7 +7,7 @@ import {
     useActionData,
     Link
 } from "react-router-dom"
-import { loginUser } from "../api"
+import { signInUser } from "../api"
 
 export function loader({ request }) {
     return new URL(request.url).searchParams.get("message")
@@ -19,10 +19,9 @@ export async function action({ request }) {
     const password = formData.get("password")
     const pathname = new URL(request.url)
         .searchParams.get("redirectTo") || "/host"
-    
+
     try {
-        const data = await loginUser({ email, password })
-        localStorage.setItem("loggedin", true)
+        await signInUser({ email, password })
         return redirect(pathname)
     } catch(err) {
         return err.message

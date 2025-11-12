@@ -1,5 +1,5 @@
 import { initializeApp } from "firebase/app";
-import { getFirestore, collection, doc, getDocs, getDoc, query, where } from "firebase/firestore/lite";
+import { getFirestore, collection, doc, getDocs, getDoc, query, where, setDoc } from "firebase/firestore/lite";
 import {
     getAuth,
     createUserWithEmailAndPassword,
@@ -44,28 +44,69 @@ export async function getVan(id) {
 }
 
 export async function getHostVans() {
-    const q = query(vansCollectionRef, where("hostId", "==", "123"))
+    const user = auth.currentUser;
+
+    if (!user) {
+        throw new Error("You must be logged in to view your vans");
+    }
+
+    const q = query(vansCollectionRef, where("hostId", "==", user.uid));
     const snapshot = await getDocs(q);
     const vans = snapshot.docs.map(doc => ({
         ...doc.data(),
         id: doc.id
-    }))
-    return vans
+    }));
+
+    return vans;
 }
 
-export async function loginUser(creds) {
-    const res = await fetch("/api/login",
-        { method: "post", body: JSON.stringify(creds) }
-    )
-    const data = await res.json()
+// Sign up function
+export async function signUpUser({ email, password, name }) {
+    try {
+        // Create Firebase Auth user
+        const userCredential = await createUserWithEmailAndPassword(
+            auth,
+            email,
+            password
+        );
 
-    if (!res.ok) {
-        throw {
-            message: data.message,
-            statusText: res.statusText,
-            status: res.status
-        }
+        const user = userCredential.user;
+
+        // Create user profile document in Firestore
+        const userDocRef = doc(db, "users", user.uid);
+        await setDoc(userDocRef, {
+            uid: user.uid,
+            email: user.email,
+            name: name,
+            createdAt: new Date().toISOString(),
+            role: "host"
+        });
+
+        return { user: userCredential.user };
+    } catch (error) {
+        throw new Error(error.message);
     }
+}
 
-    return data
+// Sign in function
+export async function signInUser({ email, password }) {
+    try {
+        const userCredential = await signInWithEmailAndPassword(
+            auth,
+            email,
+            password
+        );
+        return { user: userCredential.user };
+    } catch (error) {
+        throw new Error(error.message);
+    }
+}
+
+// Sign out function
+export async function signOutUser() {
+    try {
+        await signOut(auth);
+    } catch (error) {
+        throw new Error(error.message);
+    }
 }
