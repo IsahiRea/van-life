@@ -7,8 +7,8 @@
 html, body {
     margin: 0;
     padding: 0;
-    background-color: #FFF7ED;
-    font-family: "Inter", sans-serif;
+    background-color: var(--bg-primary);
+    font-family: var(--font-primary);
     min-width: 430px;
 }
 
