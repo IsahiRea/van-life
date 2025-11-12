@@ -110,3 +110,18 @@ export async function signOutUser() {
         throw new Error(error.message);
     }
 }
+
+// Get user profile from Firestore
+export async function getUserProfile(userId) {
+    const userDocRef = doc(db, "users", userId);
+    const userSnapshot = await getDoc(userDocRef);
+
+    if (!userSnapshot.exists()) {
+        throw new Error("User profile not found");
+    }
+
+    return {
+        id: userSnapshot.id,
+        ...userSnapshot.data()
+    };
+}

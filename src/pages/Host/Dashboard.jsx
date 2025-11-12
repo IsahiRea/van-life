@@ -1,7 +1,8 @@
 import React from "react"
 import { Link, defer, Await, useLoaderData } from "react-router-dom"
-import { getHostVans } from "../../api"
+import { getHostVans, getUserProfile } from "../../api"
 import { requireAuth } from "../../utils"
+import { useAuth } from "../../context/AuthContext"
 
 export async function loader({ request }) {
     await requireAuth(request)
@@ -10,6 +11,16 @@ export async function loader({ request }) {
 
 export default function Dashboard() {
     const loaderData = useLoaderData()
+    const { currentUser } = useAuth()
+    const [userProfile, setUserProfile] = React.useState(null)
+
+    React.useEffect(() => {
+        if (currentUser) {
+            getUserProfile(currentUser.uid)
+                .then(profile => setUserProfile(profile))
+                .catch(err => console.error("Error fetching user profile:", err))
+        }
+    }, [currentUser])
 
     function renderVanElements(vans) {
         const hostVansEls = vans.slice(0, 3).map((van) => (
@@ -38,8 +49,14 @@ export default function Dashboard() {
         <div className="dashboard-container">
             {/* Header */}
             <div className="dashboard-header">
-                <h1>Welcome back!</h1>
+                <h1>Welcome back{userProfile?.name ? `, ${userProfile.name}` : ''}!</h1>
                 <p>Here's what's happening with your vans today</p>
+                {currentUser && (
+                    <div className="user-info">
+                        <p className="user-email">{currentUser.email}</p>
+                        <p className="user-id">User ID: {currentUser.uid}</p>
+                    </div>
+                )}
             </div>
 
             {/* Stats Cards */}
