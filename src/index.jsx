@@ -7,6 +7,7 @@ import {
   Route,
   Link
 } from "react-router-dom"
+import { AuthProvider } from './context/AuthContext';
 import Home from "./pages/Home"
 import About from "./pages/About"
 import Vans, { loader as vansLoader } from "./pages/Vans/Vans"
@@ -103,7 +104,9 @@ const router = createBrowserRouter(createRoutesFromElements(
 
 function App() {
   return (
-    <RouterProvider router={router} />
+    <AuthProvider>
+      <RouterProvider router={router} />
+    </AuthProvider>
   )
 }
 

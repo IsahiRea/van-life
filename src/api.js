@@ -1,5 +1,12 @@
 import { initializeApp } from "firebase/app";
 import { getFirestore, collection, doc, getDocs, getDoc, query, where } from "firebase/firestore/lite";
+import {
+    getAuth,
+    createUserWithEmailAndPassword,
+    signInWithEmailAndPassword,
+    signOut,
+    onAuthStateChanged
+} from "firebase/auth";
 
 const firebaseConfig = {
   apiKey: "AIzaSyAalVUUmQ5jPFGKBBB8Bn6HfJFVnGqwzc4",
@@ -13,6 +20,7 @@ const firebaseConfig = {
 
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
+export const auth = getAuth(app);
 
 const vansCollectionRef = collection(db, 'vans');
 
