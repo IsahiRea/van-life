@@ -1,16 +1,16 @@
-import React from "react"
+import { useState } from "react"
 import { useNavigate, Link } from "react-router"
 import { signUpUser } from "../api"
 
 export default function SignUp() {
-    const [formData, setFormData] = React.useState({
+    const [formData, setFormData] = useState({
         name: "",
         email: "",
         password: "",
         confirmPassword: ""
     })
-    const [status, setStatus] = React.useState("idle")
-    const [error, setError] = React.useState(null)
+    const [status, setStatus] = useState("idle")
+    const [error, setError] = useState(null)
     const navigate = useNavigate()
 
     function handleSubmit(e) {

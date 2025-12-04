@@ -1,4 +1,4 @@
-import React from "react"
+import { useState, useEffect, Suspense } from "react"
 import { Link, Await, useLoaderData } from "react-router"
 import { getHostVans, getUserProfile } from "../../api"
 import { requireAuth } from "../../utils"
@@ -13,9 +13,9 @@ export async function loader({ request }) {
 export default function Dashboard() {
     const loaderData = useLoaderData()
     const { currentUser } = useAuth()
-    const [userProfile, setUserProfile] = React.useState(null)
+    const [userProfile, setUserProfile] = useState(null)
 
-    React.useEffect(() => {
+    useEffect(() => {
         if (currentUser) {
             getUserProfile(currentUser.uid)
                 .then(profile => setUserProfile(profile))
@@ -139,9 +139,9 @@ export default function Dashboard() {
                             <h2>Your listed vans</h2>
                             <Link to="vans" className="view-all-link">View all</Link>
                         </div>
-                        <React.Suspense fallback={<div className="loading">Loading...</div>}>
+                        <Suspense fallback={<div className="loading">Loading...</div>}>
                             <Await resolve={loaderData.vans}>{renderVanElements}</Await>
-                        </React.Suspense>
+                        </Suspense>
                     </section>
                 </div>
 

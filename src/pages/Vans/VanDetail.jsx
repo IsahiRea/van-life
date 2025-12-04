@@ -1,4 +1,3 @@
-import React from "react"
 import { Link, useParams, useLocation, useLoaderData } from "react-router"
 import { getVan } from "../../api"
 

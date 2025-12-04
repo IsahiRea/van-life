@@ -122,5 +122,12 @@ function App() {
 }
 
 ReactDOM
-  .createRoot(document.getElementById('root'))
+  .createRoot(document.getElementById('root'), {
+    onCaughtError: (error, errorInfo) => {
+      console.error('Caught by Error Boundary:', error, errorInfo);
+    },
+    onUncaughtError: (error, errorInfo) => {
+      console.error('Uncaught error:', error, errorInfo);
+    }
+  })
   .render(<App />);

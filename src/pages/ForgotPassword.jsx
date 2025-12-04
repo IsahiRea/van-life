@@ -1,12 +1,12 @@
-import React from "react"
+import { useState } from "react"
 import { Link } from "react-router"
 import { resetPassword } from "../api"
 
 export default function ForgotPassword() {
-    const [email, setEmail] = React.useState("")
-    const [status, setStatus] = React.useState("idle")
-    const [message, setMessage] = React.useState(null)
-    const [error, setError] = React.useState(null)
+    const [email, setEmail] = useState("")
+    const [status, setStatus] = useState("idle")
+    const [message, setMessage] = useState(null)
+    const [error, setError] = useState(null)
 
     function handleSubmit(e) {
         e.preventDefault()

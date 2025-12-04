@@ -1,4 +1,4 @@
-import React from "react"
+import { Suspense } from "react"
 import { Link, useLoaderData, Await } from "react-router"
 import { getHostVans } from "../../api"
 import { requireAuth } from "../../utils"
@@ -82,11 +82,11 @@ export default function HostVans() {
                     Add New Van
                 </button>
             </div>
-            <React.Suspense fallback={<div className="loading">Loading vans...</div>}>
+            <Suspense fallback={<div className="loading">Loading vans...</div>}>
                 <Await resolve={dataPromise.vans}>
                     {renderVanElements}
                 </Await>
-            </React.Suspense>
+            </Suspense>
         </div>
     )
 }

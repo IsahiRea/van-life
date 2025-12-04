@@ -1,4 +1,3 @@
-import React from "react"
 import { useParams, Link, NavLink, Outlet, useLoaderData } from "react-router"
 import { getVan } from "../../api"
 import { requireAuth } from "../../utils"

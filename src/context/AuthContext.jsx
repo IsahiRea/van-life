@@ -1,4 +1,4 @@
-import React, { createContext, useContext, useState, useEffect } from 'react';
+import { createContext, useContext, useState, useEffect } from 'react';
 import { auth } from '../api';
 import { onAuthStateChanged } from 'firebase/auth';
 
@@ -31,9 +31,9 @@ export function AuthProvider({ children }) {
     };
 
     return (
-        <AuthContext.Provider value={value}>
+        <AuthContext value={value}>
             {!loading && children}
-        </AuthContext.Provider>
+        </AuthContext>
     );
 }
 

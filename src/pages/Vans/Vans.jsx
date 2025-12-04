@@ -1,4 +1,4 @@
-import React from "react"
+import { Suspense } from "react"
 import {
     Link,
     useSearchParams,
@@ -151,11 +151,11 @@ export default function Vans() {
                 <h1>Explore our van options</h1>
                 <p>Find the perfect van for your next adventure. All vans are fully equipped and ready to go.</p>
             </div>
-            <React.Suspense fallback={<h2 className="vans-loading">Loading vans...</h2>}>
+            <Suspense fallback={<h2 className="vans-loading">Loading vans...</h2>}>
                 <Await resolve={dataPromise.vans}>
                     {renderVanElements}
                 </Await>
-            </React.Suspense>
+            </Suspense>
         </div>
     )
 }
