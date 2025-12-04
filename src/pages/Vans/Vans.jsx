@@ -3,13 +3,13 @@ import {
     Link,
     useSearchParams,
     useLoaderData,
-    defer,
     Await
-} from "react-router-dom"
+} from "react-router"
 import { getVans } from "../../api"
 
 export function loader() {
-    return defer({ vans: getVans() })
+    // In React Router v7, return promises directly without defer
+    return { vans: getVans() }
 }
 
 export default function Vans() {

@@ -6,7 +6,7 @@ import {
   createRoutesFromElements,
   Route,
   Link
-} from "react-router-dom"
+} from "react-router"
 import { AuthProvider } from './context/AuthContext';
 import Home from "./pages/Home"
 import About from "./pages/About"
@@ -57,9 +57,9 @@ const router = createBrowserRouter(createRoutesFromElements(
       errorElement={<Error />}
       loader={vansLoader}
     />
-    <Route 
-      path="vans/:id" 
-      element={<VanDetail />} 
+    <Route
+      path="vans/:id"
+      element={<VanDetail />}
       errorElement={<Error />}
       loader={vanDetailLoader}
     />

@@ -6,7 +6,7 @@ import {
     redirect,
     useActionData,
     Link
-} from "react-router-dom"
+} from "react-router"
 import { signInUser } from "../api"
 
 export function loader({ request }) {

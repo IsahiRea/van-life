@@ -1,11 +1,12 @@
 import React from "react"
-import { Link, useLoaderData, defer, Await } from "react-router-dom"
+import { Link, useLoaderData, Await } from "react-router"
 import { getHostVans } from "../../api"
 import { requireAuth } from "../../utils"
 
 export async function loader({ request }) {
     await requireAuth(request)
-    return defer({ vans: getHostVans() })
+    // In React Router v7, return promises directly without defer
+    return { vans: getHostVans() }
 }
 
 export default function HostVans() {

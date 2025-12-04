@@ -1,5 +1,5 @@
 import React from "react"
-import { useOutletContext } from "react-router-dom"
+import { useOutletContext } from "react-router"
 import "../../css/pages/host/host-van-photos.css"
 
 export default function HostVanPhotos() {

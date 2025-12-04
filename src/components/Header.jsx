@@ -1,5 +1,5 @@
 import React from "react"
-import { Link, NavLink, useNavigate } from "react-router-dom"
+import { Link, NavLink, useNavigate } from "react-router"
 import { useAuth } from "../context/AuthContext"
 import { signOutUser } from "../api"
 import avatarIcon from "../assets/images/avatar-icon.png"

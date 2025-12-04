@@ -1,7 +1,7 @@
 import React from "react"
 import bgImg from "../assets/images/about-hero.png"
 import interiorImg from "../assets/images/about-interior.png"
-import { Link } from "react-router-dom"
+import { Link } from "react-router"
 
 export default function About() {
     return (
