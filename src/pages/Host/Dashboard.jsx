@@ -52,12 +52,6 @@ export default function Dashboard() {
             <div className="dashboard-header">
                 <h1>Welcome back{userProfile?.name ? `, ${userProfile.name}` : ''}!</h1>
                 <p>Here's what's happening with your vans today</p>
-                {currentUser && (
-                    <div className="user-info">
-                        <p className="user-email">{currentUser.email}</p>
-                        <p className="user-id">User ID: {currentUser.uid}</p>
-                    </div>
-                )}
             </div>
 
             {/* Stats Cards */}
