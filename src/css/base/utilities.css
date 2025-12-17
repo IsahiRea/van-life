@@ -39,11 +39,23 @@
     --color-error: #CC0000;
     --color-success: #00A63E;
 
+    /* Auth Page Colors */
+    --auth-bg-warm: #FDF8F3;
+    --auth-accent-forest: #2D5A4A;
+    --auth-accent-forest-light: #3D7A64;
+    --auth-text-muted: #6B7280;
+    --auth-border: #E8E0D8;
+    --auth-input-bg: #FAFAFA;
+    --auth-overlay-start: rgba(45, 90, 74, 0.85);
+    --auth-overlay-end: rgba(22, 22, 22, 0.7);
+
     /* Gradients */
     --gradient-hero: linear-gradient(0deg, rgba(0, 0, 0, 0.46), rgba(0, 0, 0, 0.46));
     --gradient-orange-light: linear-gradient(to bottom, #FFEAD0, #FFDDB2);
     --gradient-orange-primary: linear-gradient(to bottom, #FF8C38, #FF7A1F);
     --gradient-orange-medium: linear-gradient(to bottom, #FFDDB2, #FFCC8D);
+    --gradient-auth-overlay: linear-gradient(135deg, var(--auth-overlay-start) 0%, var(--auth-overlay-end) 100%);
+    --gradient-sunset: linear-gradient(180deg, #FF8C38 0%, #E17654 50%, #2D5A4A 100%);
 
     /* ==================== */
     /* Typography */
@@ -51,6 +63,8 @@
 
     --font-primary: 'Inter', sans-serif;
     --font-secondary: 'Arimo', sans-serif;
+    --font-display: 'Sora', sans-serif;
+    --font-body: 'DM Sans', sans-serif;
 
     /* Font Sizes */
     --font-size-xs: 0.75rem;      /* 12px */

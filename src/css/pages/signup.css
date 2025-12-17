@@ -1,103 +1,172 @@
-/* Sign Up Page - Mobile First */
-.signup-container {
+/* Sign Up Page - Professional Redesign */
+/* Shares base styles with login.css, this file adds signup-specific styles */
+
+/* ==================== */
+/* Signup-Specific Hero */
+/* ==================== */
+
+.auth-page--signup .auth-hero {
+    background-image: url('https://images.unsplash.com/photo-1533105079780-92b9be482077?auto=format&fit=crop&w=1920&q=80');
+}
+
+/* ==================== */
+/* Password Requirements */
+/* ==================== */
+
+.auth-password-requirements {
     display: flex;
     flex-direction: column;
+    gap: var(--space-xs);
+    padding: var(--space-sm) 0;
+    font-family: var(--font-body);
+    font-size: var(--font-size-xs);
+}
+
+.auth-requirement {
+    display: flex;
     align-items: center;
-    padding: var(--space-2xl) var(--space-lg);
+    gap: var(--space-xs);
+    color: var(--auth-text-muted);
+    transition: color var(--transition-base);
 }
 
-.signup-container h1 {
-    font-family: var(--font-primary);
-    font-size: var(--font-size-xl);
-    font-weight: var(--font-weight-bold);
-    color: var(--color-neutral-900);
-    margin-bottom: var(--space-md);
+.auth-requirement--valid {
+    color: var(--color-success);
 }
 
-.signup-form {
+.auth-requirement-icon {
+    width: 14px;
+    height: 14px;
+    flex-shrink: 0;
+}
+
+/* ==================== */
+/* Name Input Row (Desktop) */
+/* ==================== */
+
+.auth-input-row {
     display: flex;
     flex-direction: column;
-    width: 100%;
-    max-width: 500px;
+    gap: var(--space-md);
 }
 
-.signup-form > input {
-    border: 1px solid var(--color-neutral-300);
-    height: 40px;
-    text-indent: 10px;
-    font-family: var(--font-secondary);
-    font-size: var(--font-size-base);
-    font-weight: var(--font-weight-normal);
-    box-shadow: var(--shadow-sm);
-}
-
-.signup-form > input:focus {
-    outline: none;
-    border-color: var(--color-primary);
-}
-
-.signup-form > input:first-of-type {
-    border-radius: var(--border-radius-md) var(--border-radius-md) 0 0;
-}
-
-.signup-form > input:nth-of-type(2),
-.signup-form > input:nth-of-type(3) {
-    border-top: none;
-}
-
-.signup-form > input:last-of-type {
-    border-radius: 0 0 var(--border-radius-md) var(--border-radius-md);
-    border-top: none;
-}
-
-.signup-form > button {
-    background-color: var(--color-primary);
-    border: none;
-    border-radius: var(--border-radius-md);
-    height: 55px;
-    margin-top: var(--space-lg);
-    color: var(--color-white);
-    font-family: var(--font-secondary);
-    font-size: var(--font-size-base);
-    font-weight: var(--font-weight-semibold);
-    transition: var(--transition-base);
-}
-
-.signup-form > button:hover {
-    cursor: pointer;
-    background-color: var(--color-primary-dark);
-}
-
-.signup-form > button:disabled {
-    background-color: var(--color-neutral-400);
-    cursor: not-allowed;
-}
-
-.signup-container p {
-    margin-top: var(--space-lg);
-    font-family: var(--font-secondary);
-    font-size: var(--font-size-base);
-    color: var(--color-neutral-700);
-}
-
-.signup-container .login-link {
-    color: var(--color-primary);
-    text-decoration: none;
-    font-weight: var(--font-weight-semibold);
-}
-
-.signup-container .login-link:hover {
-    text-decoration: underline;
-    color: var(--color-primary-dark);
-}
-
-/* Tablet and larger screens */
 @media (min-width: 768px) {
-    .signup-container {
-        padding: var(--space-3xl) var(--space-xl);
+    .auth-input-row {
+        flex-direction: row;
     }
 
-    .signup-container h1 {
-        font-size: var(--font-size-2xl);
+    .auth-input-row .auth-input-group {
+        flex: 1;
+    }
+}
+
+/* ==================== */
+/* Terms & Conditions */
+/* ==================== */
+
+.auth-terms {
+    display: flex;
+    align-items: flex-start;
+    gap: var(--space-sm);
+    padding: var(--space-sm) 0;
+}
+
+.auth-terms-checkbox {
+    width: 18px;
+    height: 18px;
+    margin-top: 2px;
+    accent-color: var(--color-primary);
+    cursor: pointer;
+    flex-shrink: 0;
+}
+
+.auth-terms-label {
+    font-family: var(--font-body);
+    font-size: var(--font-size-sm);
+    color: var(--auth-text-muted);
+    line-height: var(--line-height-normal);
+}
+
+.auth-terms-label a {
+    color: var(--color-primary);
+    text-decoration: none;
+    font-weight: var(--font-weight-medium);
+}
+
+.auth-terms-label a:hover {
+    text-decoration: underline;
+}
+
+/* ==================== */
+/* Benefits List */
+/* ==================== */
+
+.auth-benefits {
+    display: none;
+}
+
+@media (min-width: 1024px) {
+    .auth-benefits {
+        display: flex;
+        flex-direction: column;
+        gap: var(--space-md);
+        margin-top: var(--space-xl);
+        padding-top: var(--space-xl);
+        border-top: 1px solid rgba(255, 255, 255, 0.2);
+    }
+
+    .auth-benefit {
+        display: flex;
+        align-items: center;
+        gap: var(--space-sm);
+        color: var(--color-white);
+        font-family: var(--font-body);
+        font-size: var(--font-size-sm);
+    }
+
+    .auth-benefit-icon {
+        width: 20px;
+        height: 20px;
+        color: var(--color-primary);
+        flex-shrink: 0;
+    }
+}
+
+/* ==================== */
+/* Progress Indicator */
+/* ==================== */
+
+.auth-progress {
+    display: flex;
+    justify-content: center;
+    gap: var(--space-xs);
+    margin-bottom: var(--space-lg);
+}
+
+.auth-progress-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: var(--radius-full);
+    background: var(--auth-border);
+    transition: all var(--transition-base);
+}
+
+.auth-progress-dot--active {
+    background: var(--color-primary);
+    width: 24px;
+    border-radius: var(--radius-pill);
+}
+
+/* ==================== */
+/* Signup-specific adjustments */
+/* ==================== */
+
+.auth-page--signup .auth-form-wrapper {
+    max-width: 420px;
+}
+
+@media (min-width: 1024px) {
+    .auth-page--signup .auth-form-section {
+        max-width: 640px;
     }
 }
