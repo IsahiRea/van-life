@@ -1,7 +1,7 @@
 import { Suspense } from "react"
 import { Link, useLoaderData, Await } from "react-router"
-import { getHostVans } from "../../api"
-import { requireAuth } from "../../utils"
+import { getHostVans } from "../../lib/api"
+import { requireAuth } from "../../lib/utils"
 
 export async function loader({ request }) {
     await requireAuth(request)

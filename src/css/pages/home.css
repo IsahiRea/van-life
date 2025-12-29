@@ -51,7 +51,7 @@
     position: relative;
     min-height: 100vh;
     min-height: 100svh;
-    background: url("../../assets/images/home-hero.png") no-repeat center center;
+    background: url("../../assets/images/heroes/home-hero.png") no-repeat center center;
     background-size: cover;
     display: flex;
     flex-direction: column;

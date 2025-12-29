@@ -1,6 +1,6 @@
 import { useState } from "react"
 import { useNavigate, Link } from "react-router"
-import { signUpUser } from "../api"
+import { signUpUser } from "../../lib/api"
 import {
     HiOutlineMail,
     HiOutlineLockClosed,

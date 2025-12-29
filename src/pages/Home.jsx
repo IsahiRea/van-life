@@ -1,5 +1,5 @@
 import { Link } from "react-router"
-import homeCtaImg from "../assets/images/home-cta.png"
+import homeCtaImg from "../assets/images/content/home-cta.png"
 
 export default function Home() {
     return (

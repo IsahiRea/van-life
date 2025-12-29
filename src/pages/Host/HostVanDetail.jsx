@@ -1,6 +1,6 @@
 import { useParams, Link, NavLink, Outlet, useLoaderData } from "react-router"
-import { getVan } from "../../api"
-import { requireAuth } from "../../utils"
+import { getVan } from "../../lib/api"
+import { requireAuth } from "../../lib/utils"
 
 export async function loader({ params, request }) {
     await requireAuth(request)

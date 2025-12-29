@@ -1,8 +1,8 @@
 import { useState } from "react"
 import { Link, NavLink, useNavigate } from "react-router"
 import { useAuth } from "../context/AuthContext"
-import { signOutUser } from "../api"
-import avatarIcon from "../assets/images/avatar-icon.png"
+import { signOutUser } from "../lib/api"
+import avatarIcon from "../assets/icons/avatar-icon.png"
 
 export default function Header() {
     const [isMenuOpen, setIsMenuOpen] = useState(false)

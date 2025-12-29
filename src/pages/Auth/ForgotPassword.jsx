@@ -1,6 +1,6 @@
 import { useState } from "react"
 import { Link } from "react-router"
-import { resetPassword } from "../api"
+import { resetPassword } from "../../lib/api"
 
 export default function ForgotPassword() {
     const [email, setEmail] = useState("")

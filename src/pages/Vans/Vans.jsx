@@ -5,7 +5,7 @@ import {
     useLoaderData,
     Await
 } from "react-router"
-import { getVans } from "../../api"
+import { getVans } from "../../lib/api"
 
 export function loader() {
     // In React Router v7, return promises directly without defer

@@ -7,7 +7,7 @@ import {
     useActionData,
     Link
 } from "react-router"
-import { signInUser } from "../api"
+import { signInUser } from "../../lib/api"
 import { HiOutlineMail, HiOutlineLockClosed, HiOutlineEye, HiOutlineEyeOff, HiOutlineExclamationCircle, HiOutlineInformationCircle, HiOutlineShieldCheck, HiOutlineLockOpen } from "react-icons/hi"
 
 export function loader({ request }) {

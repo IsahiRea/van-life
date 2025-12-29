@@ -1,7 +1,7 @@
 import { useState, useEffect, Suspense } from "react"
 import { Link, Await, useLoaderData } from "react-router"
-import { getHostVans, getUserProfile } from "../../api"
-import { requireAuth } from "../../utils"
+import { getHostVans, getUserProfile } from "../../lib/api"
+import { requireAuth } from "../../lib/utils"
 import { useAuth } from "../../context/AuthContext"
 
 export async function loader({ request }) {
