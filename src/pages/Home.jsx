@@ -181,7 +181,7 @@ export default function Home() {
                                 <path d="M5 12h14M12 5l7 7-7 7"/>
                             </svg>
                         </Link>
-                        <Link to="/host" className="cta-btn-outline">Become a Host</Link>
+                        <Link to="/signup" className="cta-btn-outline">Become a Host</Link>
                     </div>
                     <div className="cta-guarantee">
                         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
