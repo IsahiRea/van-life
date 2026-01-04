@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+  <!-- Van body -->
+  <rect x="2" y="10" width="28" height="14" rx="3" fill="#FF8C38"/>
+
+  <!-- Van cabin/front -->
+  <path d="M22 10V8a4 4 0 0 1 4 4v8h-4V10z" fill="#E17654"/>
+
+  <!-- Windows -->
+  <rect x="5" y="12" width="5" height="4" rx="1" fill="#FFFFFF" opacity="0.9"/>
+  <rect x="12" y="12" width="5" height="4" rx="1" fill="#FFFFFF" opacity="0.9"/>
+  <rect x="23" y="12" width="4" height="4" rx="1" fill="#FFFFFF" opacity="0.9"/>
+
+  <!-- Wheels -->
+  <circle cx="8" cy="24" r="4" fill="#2D3748"/>
+  <circle cx="8" cy="24" r="2" fill="#718096"/>
+  <circle cx="22" cy="24" r="4" fill="#2D3748"/>
+  <circle cx="22" cy="24" r="2" fill="#718096"/>
+
+  <!-- Roof rack accent -->
+  <rect x="4" y="7" width="14" height="2" rx="1" fill="#E17654"/>
+</svg>
