@@ -57,13 +57,13 @@ A modern React-based van rental marketplace application showcasing advanced Reac
 ## Tech Stack
 
 ### Frontend
-- **Framework**: React.js 18.2.0
-- **Routing**: React Router v6.4.3 (with createBrowserRouter, loaders, and nested routes)
+- **Framework**: React.js 19.2.1
+- **Routing**: React Router v7.10.0 (with createBrowserRouter, loaders, and nested routes)
 - **Styling**: Vanilla CSS with modular architecture
 - **Icons**: React Icons 5.5.0
 
 ### Backend & Data
-- **Database**: Firebase 12.1.0 (Firestore for van data storage)
+- **Database**: Firebase 12.6.0 (Firestore for van data storage)
 - **Authentication**: Firebase Authentication (email/password provider)
 - **Mock Server**: MirageJS 0.1.46 (legacy endpoints, being phased out)
 
@@ -110,24 +110,33 @@ You can either:
 ## Project Structure
 
 ```
-vanlife/
+Van-life/
+├── docs/                  # Technical documentation
+│   ├── ARCHITECTURE.md    # System architecture
+│   ├── EXECUTION-FLOW.md  # Code execution flow
+│   ├── API.md             # API reference
+│   └── AUTHENTICATION.md  # Auth system docs
 ├── src/
-│   ├── components/        # Reusable UI components (Header, Footer, Layout, etc.)
-│   ├── pages/            # Route components (Home, About, Vans, Host pages)
-│   │   ├── Host/         # Host dashboard and van management pages
-│   │   └── Vans/         # Public van listing and detail pages
-│   ├── css/              # Modular CSS architecture
-│   │   ├── base/         # Reset and utility styles
-│   │   ├── components/   # Component-specific styles
-│   │   ├── pages/        # Page-specific styles
-│   │   │   └── host/     # Host page styles
-│   │   └── main.css      # CSS entry point
-│   ├── assets/           # Static assets and images
-│   ├── api.js            # Firebase API functions
-│   ├── server.js         # MirageJS mock authentication server
-│   ├── utils.js          # Utility functions (requireAuth, etc.)
-│   └── index.jsx         # Main application entry & route definitions
-└── index.html            # Root HTML file
+│   ├── assets/            # Static assets and images
+│   ├── components/        # Reusable UI components
+│   ├── context/           # React context (AuthContext)
+│   ├── css/               # Modular CSS architecture
+│   │   ├── base/          # Reset and utility styles
+│   │   ├── components/    # Component-specific styles
+│   │   └── pages/         # Page-specific styles
+│   │       └── host/      # Host page styles
+│   ├── layouts/           # Layout components (Header, Footer, etc.)
+│   ├── lib/               # API and utilities
+│   │   ├── api.js         # Firebase API functions
+│   │   ├── utils.js       # Utility functions (requireAuth, etc.)
+│   │   └── server.js      # MirageJS mock server (legacy)
+│   ├── pages/             # Route components
+│   │   ├── Auth/          # Login, SignUp, ForgotPassword
+│   │   ├── Host/          # Dashboard and van management
+│   │   └── Vans/          # Public van listing and detail
+│   └── index.jsx          # Main application entry & route definitions
+├── CLAUDE.md              # AI assistant instructions
+└── index.html             # Root HTML file
 ```
 
 ## Available Scripts
@@ -183,6 +192,17 @@ vanlife/
 - `/host/reviews` - Customer reviews
 - `/host/vans` - Manage van listings
 - `/host/vans/:id` - Van management (Info, Pricing, Photos)
+
+## Documentation
+
+Detailed technical documentation is available in the `docs/` folder:
+
+| Document | Description |
+|----------|-------------|
+| [ARCHITECTURE.md](docs/ARCHITECTURE.md) | Project structure, component hierarchy, route structure, CSS architecture |
+| [EXECUTION-FLOW.md](docs/EXECUTION-FLOW.md) | App bootstrap, routing flow, data fetching, user interaction examples |
+| [API.md](docs/API.md) | Firebase setup, Firestore collections, all API function signatures |
+| [AUTHENTICATION.md](docs/AUTHENTICATION.md) | Auth context, login/logout flows, route protection, session persistence |
 
 ## Learning Outcomes
 
