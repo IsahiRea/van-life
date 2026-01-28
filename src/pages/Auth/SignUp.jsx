@@ -1,6 +1,7 @@
-import { useState } from "react"
+import { useState, useMemo } from "react"
 import { useNavigate, Link } from "react-router"
 import { signUpUser } from "../../lib/api"
+import { validatePassword } from "../../lib/utils"
 import {
     HiOutlineMail,
     HiOutlineLockClosed,
@@ -32,15 +33,18 @@ export default function SignUp() {
     const isSubmitting = status === "submitting"
 
     // Password validation
-    const hasMinLength = formData.password.length >= 6
+    const passwordValidation = useMemo(
+        () => validatePassword(formData.password),
+        [formData.password]
+    )
     const passwordsMatch = formData.password === formData.confirmPassword && formData.confirmPassword.length > 0
 
     function handleSubmit(e) {
         e.preventDefault()
         setError(null)
 
-        if (!hasMinLength) {
-            setError("Password must be at least 6 characters")
+        if (!passwordValidation.isValid) {
+            setError("Password must be at least 8 characters and include 3 of: uppercase, lowercase, number")
             return
         }
 
@@ -208,13 +212,62 @@ export default function SignUp() {
                         {/* Password Requirements */}
                         {(formData.password || formData.confirmPassword) && (
                             <div className="auth-password-requirements">
-                                <div className={`auth-requirement ${hasMinLength ? 'auth-requirement--valid' : ''}`}>
-                                    {hasMinLength ? (
+                                {/* Password Strength Indicator */}
+                                {formData.password && (
+                                    <div className="auth-password-strength">
+                                        <div className="auth-strength-bars">
+                                            {[1, 2, 3, 4].map((level) => (
+                                                <div
+                                                    key={level}
+                                                    className={`auth-strength-bar ${
+                                                        passwordValidation.strength >= level
+                                                            ? `auth-strength-bar--level-${passwordValidation.strength}`
+                                                            : ''
+                                                    }`}
+                                                />
+                                            ))}
+                                        </div>
+                                        <span className={`auth-strength-label auth-strength-label--level-${passwordValidation.strength}`}>
+                                            {passwordValidation.strength === 0 && 'Too weak'}
+                                            {passwordValidation.strength === 1 && 'Weak'}
+                                            {passwordValidation.strength === 2 && 'Fair'}
+                                            {passwordValidation.strength === 3 && 'Good'}
+                                            {passwordValidation.strength === 4 && 'Strong'}
+                                        </span>
+                                    </div>
+                                )}
+
+                                <div className={`auth-requirement ${passwordValidation.requirements.minLength ? 'auth-requirement--valid' : ''}`}>
+                                    {passwordValidation.requirements.minLength ? (
                                         <HiOutlineCheck className="auth-requirement-icon" />
                                     ) : (
                                         <HiOutlineX className="auth-requirement-icon" />
                                     )}
-                                    <span>At least 6 characters</span>
+                                    <span>At least 8 characters</span>
+                                </div>
+                                <div className={`auth-requirement ${passwordValidation.requirements.hasUppercase ? 'auth-requirement--valid' : ''}`}>
+                                    {passwordValidation.requirements.hasUppercase ? (
+                                        <HiOutlineCheck className="auth-requirement-icon" />
+                                    ) : (
+                                        <HiOutlineX className="auth-requirement-icon" />
+                                    )}
+                                    <span>One uppercase letter</span>
+                                </div>
+                                <div className={`auth-requirement ${passwordValidation.requirements.hasLowercase ? 'auth-requirement--valid' : ''}`}>
+                                    {passwordValidation.requirements.hasLowercase ? (
+                                        <HiOutlineCheck className="auth-requirement-icon" />
+                                    ) : (
+                                        <HiOutlineX className="auth-requirement-icon" />
+                                    )}
+                                    <span>One lowercase letter</span>
+                                </div>
+                                <div className={`auth-requirement ${passwordValidation.requirements.hasNumber ? 'auth-requirement--valid' : ''}`}>
+                                    {passwordValidation.requirements.hasNumber ? (
+                                        <HiOutlineCheck className="auth-requirement-icon" />
+                                    ) : (
+                                        <HiOutlineX className="auth-requirement-icon" />
+                                    )}
+                                    <span>One number</span>
                                 </div>
                                 {formData.confirmPassword && (
                                     <div className={`auth-requirement ${passwordsMatch ? 'auth-requirement--valid' : ''}`}>

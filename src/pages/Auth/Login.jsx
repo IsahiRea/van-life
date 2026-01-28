@@ -8,6 +8,7 @@ import {
     Link
 } from "react-router"
 import { signInUser } from "../../lib/api"
+import { sanitizeRedirectUrl } from "../../lib/utils"
 import { HiOutlineMail, HiOutlineLockClosed, HiOutlineEye, HiOutlineEyeOff, HiOutlineExclamationCircle, HiOutlineInformationCircle, HiOutlineShieldCheck, HiOutlineLockOpen } from "react-icons/hi"
 
 export function loader({ request }) {
@@ -18,8 +19,8 @@ export async function action({ request }) {
     const formData = await request.formData()
     const email = formData.get("email")
     const password = formData.get("password")
-    const pathname = new URL(request.url)
-        .searchParams.get("redirectTo") || "/host"
+    const rawRedirect = new URL(request.url).searchParams.get("redirectTo")
+    const pathname = sanitizeRedirectUrl(rawRedirect, "/host")
 
     try {
         await signInUser({ email, password })

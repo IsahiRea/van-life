@@ -41,6 +41,72 @@
 }
 
 /* ==================== */
+/* Password Strength Indicator */
+/* ==================== */
+
+.auth-password-strength {
+    display: flex;
+    align-items: center;
+    gap: var(--space-sm);
+    margin-bottom: var(--space-xs);
+}
+
+.auth-strength-bars {
+    display: flex;
+    gap: 4px;
+    flex: 1;
+}
+
+.auth-strength-bar {
+    height: 4px;
+    flex: 1;
+    background: var(--auth-border);
+    border-radius: var(--radius-full);
+    transition: background-color var(--transition-base);
+}
+
+.auth-strength-bar--level-1 {
+    background: var(--color-error);
+}
+
+.auth-strength-bar--level-2 {
+    background: var(--color-primary);
+}
+
+.auth-strength-bar--level-3 {
+    background: #84cc16;
+}
+
+.auth-strength-bar--level-4 {
+    background: var(--color-success);
+}
+
+.auth-strength-label {
+    font-size: var(--font-size-xs);
+    font-weight: var(--font-weight-medium);
+    min-width: 60px;
+    text-align: right;
+    color: var(--auth-text-muted);
+    transition: color var(--transition-base);
+}
+
+.auth-strength-label--level-1 {
+    color: var(--color-error);
+}
+
+.auth-strength-label--level-2 {
+    color: var(--color-primary);
+}
+
+.auth-strength-label--level-3 {
+    color: #84cc16;
+}
+
+.auth-strength-label--level-4 {
+    color: var(--color-success);
+}
+
+/* ==================== */
 /* Name Input Row (Desktop) */
 /* ==================== */
 

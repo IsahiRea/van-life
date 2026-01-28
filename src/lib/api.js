@@ -63,6 +63,29 @@ export async function getHostVans() {
     return vans;
 }
 
+export async function getHostVan(id) {
+    const user = auth.currentUser;
+
+    if (!user) {
+        throw new Error("You must be logged in");
+    }
+
+    const docRef = doc(db, 'vans', id);
+    const snapshot = await getDoc(docRef);
+
+    if (!snapshot.exists()) {
+        throw new Error("Van not found");
+    }
+
+    const vanData = { ...snapshot.data(), id: snapshot.id };
+
+    if (vanData.hostId !== user.uid) {
+        throw new Error("You don't have permission to view this van");
+    }
+
+    return vanData;
+}
+
 // Sign up function
 export async function signUpUser({ email, password, name }) {
     try {
