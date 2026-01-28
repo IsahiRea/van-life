@@ -1,5 +1,5 @@
 import { initializeApp } from "firebase/app";
-import { getFirestore, collection, doc, getDocs, getDoc, query, where, setDoc } from "firebase/firestore/lite";
+import { getFirestore, collection, doc, getDocs, getDoc, query, where, setDoc, serverTimestamp } from "firebase/firestore/lite";
 import {
     getAuth,
     createUserWithEmailAndPassword,
@@ -101,11 +101,14 @@ export async function signUpUser({ email, password, name }) {
         // Create user profile document in Firestore
         const userDocRef = doc(db, "users", user.uid);
         await setDoc(userDocRef, {
-            uid: user.uid,
             email: user.email,
-            name: name,
-            createdAt: new Date().toISOString(),
-            role: "host"
+            displayName: name,
+            photoURL: null,
+            bio: null,
+            role: "host",
+            emailVerified: user.emailVerified,
+            createdAt: serverTimestamp(),
+            updatedAt: serverTimestamp()
         });
 
         return { user: userCredential.user };
@@ -146,9 +149,13 @@ export async function getUserProfile(userId) {
         throw new Error("User profile not found");
     }
 
+    const data = userSnapshot.data();
+
+    // Handle both old schema (name) and new schema (displayName)
     return {
         id: userSnapshot.id,
-        ...userSnapshot.data()
+        ...data,
+        displayName: data.displayName || data.name || null
     };
 }
 
@@ -204,7 +211,7 @@ export async function updateUserProfile({ displayName, photoURL, bio }) {
         // Update Firestore user document
         const userDocRef = doc(db, "users", user.uid);
         const updateData = {
-            updatedAt: new Date().toISOString()
+            updatedAt: serverTimestamp()
         };
 
         if (displayName) updateData.displayName = displayName;
